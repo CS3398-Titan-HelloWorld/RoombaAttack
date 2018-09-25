@@ -1,43 +1,71 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Sprites/Player/BeetleD0.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Player/BeetleU0.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Player/BeetleD0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/BeetleL1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/BeetleL2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/BeetleD1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/BeetleD2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/BeetleR0.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/BeetleU1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/Beetle_20.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Player/BeetleL0.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Player/BeetleR1.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Player/BeetleR2.png" type="Texture" id=12]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="SpriteFrames" id=1]
 
-resource_name = "Walk_Down"
-length = 1.5
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 0, 0, 0 ]
-}
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle_Up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle_Down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Walk_Left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Walk_Down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle_Right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Walk_Up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Idle_Left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Walk_Right",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
 
 [node name="Node2D" type="Node2D" index="0"]
 
 position = Vector2( 482.096, 59.7568 )
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Animation" ]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/Walk_Down = SubResource( 1 )
-blend_times = [  ]
+frames = SubResource( 1 )
+animation = "Walk_Down"
+playing = true
 
 
