@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 extends KinematicBody2D
 
 export (int) var speed
@@ -36,3 +37,21 @@ func _process(delta):
 		$AnimatedSprite.flip_v = velocity.y > 0
 	pass
 
+=======
+extends Node2D
+signal hit
+
+# class member variables go here, for example:
+# var a = 2
+# var b = "textvar"
+
+func _ready():
+	# Called when the node is added to the scene for the first time.
+	# Initialization here
+	pass
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+>>>>>>> 839c5760f6437fdc8f4e9b8565af572a4bfb09fa
