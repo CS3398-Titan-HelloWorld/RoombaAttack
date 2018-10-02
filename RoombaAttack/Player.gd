@@ -2,13 +2,14 @@ extends KinematicBody2D
 
 export (int) var speed
 var screensize
+var velocity = Vector2()
 
 func _ready():
 	screensize = get_viewport_rect().size
 	pass
 
 func _process(delta):
-	var velocity = Vector2()
+	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
 		velocity.x +=1
 	if Input.is_action_pressed("ui_left"):
@@ -23,9 +24,8 @@ func _process(delta):
 	else:
 		$AnimatedSprite.stop()
 		
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screensize.x)
-	position.y = clamp(position.y, 0, screensize.y)
+func _physics_process(delta):
+	move_and_slide(velocity)
 	
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "Right"
@@ -34,5 +34,10 @@ func _process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite.animation = "Up"
 		$AnimatedSprite.flip_v = velocity.y > 0
-	pass
+
+func on_Player_body_entered(body):
+	hide()
+	emit_signal("hit")
+	$CollisionShape.disabled = true
+
 

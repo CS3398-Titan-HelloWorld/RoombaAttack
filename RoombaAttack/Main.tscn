@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://RoombaMob.tscn" type="PackedScene" id=2]
+[ext_resource path="res://LevelMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PausePanel.gd" type="Script" id=4]
 
@@ -15,7 +15,7 @@ _data = {
 [node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
-Mob = ExtResource( 2 )
+Mob = null
 
 [node name="MobTimer" type="Timer" parent="." index="0"]
 
@@ -40,7 +40,7 @@ autostart = false
 
 [node name="StartPosition" type="Position2D" parent="." index="3"]
 
-position = Vector2( 240, 450 )
+position = Vector2( 156.897, 290.443 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="MobPath" type="Path2D" parent="." index="4"]
@@ -52,6 +52,7 @@ curve = SubResource( 1 )
 
 position = Vector2( -0.842529, 1.0733 )
 rotation = -0.00132979
+scale = Vector2( 2, 1e-005 )
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -60,11 +61,19 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 
-[node name="Player" parent="." index="5" instance=ExtResource( 3 )]
+[node name="LevelMap" parent="." index="5" instance=ExtResource( 2 )]
 
-[node name="EndPosition" type="Position2D" parent="." index="6"]
+[node name="Player" parent="." index="6" instance=ExtResource( 3 )]
 
-[node name="PausePanel" type="Panel" parent="." index="7"]
+position = Vector2( 191.777, 259.279 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="EndPosition" type="Position2D" parent="." index="7"]
+
+position = Vector2( 922.161, 297.941 )
+scale = Vector2( 2, -1.40069 )
+
+[node name="PausePanel" type="Panel" parent="." index="8"]
 
 pause_mode = 2
 visible = false
@@ -113,7 +122,5 @@ max_lines_visible = -1
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
-
-[connection signal="hit" from="Player" to="." method="game_over"]
 
 
