@@ -1,14 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Roomba/Roomba.png" type="Texture" id=2]
+[ext_resource path="res://RoombaAttack-master/Sprites/Roomba/Roomba.png" type="Texture" id=2]
+[ext_resource path="res://RoombaAttack-master/Sprites/Roomba/Roomba2.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 27.4885
+radius = 16.5
 
-[node name="Mob" type="Area2D" index="0"]
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Beep",
+"speed": 5.0
+} ]
+
+[node name="Mob" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -26,16 +36,19 @@ __meta__ = {
 min_speed = 150
 max_speed = 250
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 shape = SubResource( 1 )
 
-[node name="Visibility" type="VisibilityNotifier2D" parent="." index="2"]
+[node name="Visibility" type="VisibilityNotifier2D" parent="." index="1"]
 
 rect = Rect2( -10, -10, 20, 20 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 2 )
+animation = "Beep"
+_sections_unfolded = [ "Transform" ]
 
 
