@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://LevelMap.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://PausePanel.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/CookieSpritebig.png" type="Texture" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PausePanel.gd" type="Script" id=5]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -12,7 +14,12 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -0.842529, 1.0733, 0, 0, 0, 0, 1022.16, -0.287079, 0, 0, 0, 0, 1020.8, 596.917, 0, 0, 0, 0, -2.20291, 595.557, 0, 0, 0, 0, -0.842529, 1.0733 )
 }
 
-[node name="Main" type="Node" index="0"]
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 114.058, 13.4603 )
+
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 Mob = null
@@ -63,15 +70,32 @@ lookahead = 4.0
 
 [node name="LevelMap" parent="." index="5" instance=ExtResource( 2 )]
 
-[node name="Player" parent="." index="6" instance=ExtResource( 3 )]
+[node name="EndPosition" type="Area2D" parent="." index="6"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Sprite" type="Sprite" parent="EndPosition" index="0"]
+
+position = Vector2( 880.058, 452.331 )
+scale = Vector2( 0.0790723, 0.0833476 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndPosition" index="1"]
+
+position = Vector2( 879.975, 451.999 )
+scale = Vector2( 0.204519, 1.65752 )
+shape = SubResource( 2 )
+
+[node name="Player" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 191.777, 259.279 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
-
-[node name="EndPosition" type="Position2D" parent="." index="7"]
-
-position = Vector2( 922.161, 297.941 )
-scale = Vector2( 2, -1.40069 )
 
 [node name="PausePanel" type="Panel" parent="." index="8"]
 
@@ -91,7 +115,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="PauseLabel" type="Label" parent="PausePanel" index="0"]
@@ -117,10 +141,14 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="GUI" parent="." index="9" instance=ExtResource( 6 )]
+
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+
+[connection signal="body_entered" from="EndPosition" to="." method="_on_EndPosition_body_entered"]
 
 

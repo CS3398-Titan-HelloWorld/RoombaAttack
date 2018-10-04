@@ -40,4 +40,3 @@ func on_Player_body_entered(body):
 	emit_signal("hit")
 	$CollisionShape.disabled = true
 
-

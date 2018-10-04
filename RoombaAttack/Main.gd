@@ -5,18 +5,20 @@ func _ready():
 	randomize()
 
 func game_over():
-    $ScoreTimer.stop()
-    $MobTimer.stop()
-
+	$ScoreTimer.stop()
+	$MobTimer.stop()
+	$GUI.show_game_over()
 func new_game():
-    score = 0
-    $Player.start($StartPosition.position)
-    $StartTimer.start()
+	score = 0
+	$GUI.update_score(score)
+	$Player.start($StartPosition.position)
+	$StartTimer.start()
 func _on_StartTimer_timeout():
     $MobTimer.start()
     $ScoreTimer.start()
 func _on_ScoreTimer_timeout():
-    score += 1
+	score += 1
+	$GUI.update_score(score)
 func _on_MobTimer_timeout():
     # Choose a random location on Path2D.
     $MobPath/MobSpawnLocation.set_offset(randi())
@@ -37,6 +39,6 @@ func _input(event):
 		get_tree().quit()
 		
 
-		
-			
-	
+
+func _on_EndPosition_body_entered(body):
+	game_over()
