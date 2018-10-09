@@ -40,5 +40,3 @@ Sprint 1: ----------------------------------------------------------------------
                   3.) Create Additional Levels -- Brianna
                   4.) Add additional assets (SFX/BGM/Consumables) -- Nash
                   5.) Create Game Manager(Lose Condition/Level Transitioning) -- Ian
-
-End of S1: -----------------------------------------------------------------------------------------------------------------------------
