@@ -25,7 +25,8 @@ Option 2:
 Sprint 1: ---------------------------------------------------------------------------------------------------------------------------------
 
           Completed Tasks:
-                  1.) Added Basic Player/Mob Assets (Sprite/Spritesheet) -- Porter
+                  1.) Added Basic Player/Mob Assets (Sprite/Spritesheet) -- Porter (Merged in PlayerAnimation branch due to dev        
+                                                                                    complications).
                   2.) Implemented Player Animation -- Ramsey
                   3.) Implementd Player Hitbox -- Ramsey
                   4.) Added Basic Scene asset(s) -- Brianna
