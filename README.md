@@ -18,3 +18,27 @@ Option 1:
 Option 2:
          
          1.) In the location that the project has been downloaded, run the .exe file of the game -- should be the most recent, "stable" build.
+
+                                                         Project Status
+    Note: These are Project based Tasks, any tasks done that are not in the project will not be listed (ex. Research/ProjectPlanning).
+
+Sprint 1: ---------------------------------------------------------------------------------------------------------------------------------
+
+          Completed Tasks:
+                  1.) Added Basic Player/Mob Assets (Sprite/Spritesheet) -- Porter
+                  2.) Implemented Player Animation -- Ramsey
+                  3.) Implementd Player Hitbox -- Ramsey
+                  4.) Added Basic Scene asset(s) -- Brianna
+                  5.) Implemented Play Area Bounds -- Brianna
+                  6.) Implemented Timer and Positioning -- Nash
+                  7.) Implemented Pause Feature -- Ian
+                  8.) Implemented Close Game Feature -- Ian
+                  
+          Future Tasks:
+                  1.) Implement Player Health -- Porter
+                  2.) Implement Enemy(Hitbox/Movement)  -- Ramsey
+                  3.) Create Additional Levels -- Brianna
+                  4.) Add additional assets (SFX/BGM/Consumables) -- Nash
+                  5.) Create Game Manager(Lose Condition/Level Transitioning) -- Ian
+
+End of S1: -----------------------------------------------------------------------------------------------------------------------------
