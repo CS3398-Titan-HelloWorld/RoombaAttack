@@ -6,6 +6,7 @@ How to Run:
 Download or Clone our project (From the development branch (to see current work) or main (for the most recent 'stable' build).
 
 Option 1: 
+         
          1.) Install Godot from: https://godotengine.org/download/windows (select the tab for which OS you're running)
              NOTE: we've been using MAC OS and Windows for our project -- both of those have been confirmed to work.
 
@@ -15,4 +16,5 @@ Option 1:
          5.) Once the project has loaded, you can press the "Play button" at the top of the Godot Window to run the project.
          
 Option 2:
+         
          1.) In the location that the project has been downloaded, run the .exe file of the game -- should be the most recent, "stable" build.
