@@ -1,0 +1,355 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://LevelMap Resources/Screen Shot 2018-10-24 at 11.06.53 PM.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.75, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Node" type="Node" index="0"]
+
+[node name="Grass1" type="Sprite" parent="." index="0"]
+
+position = Vector2( 40, 40 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Grass2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 110, 40 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Wood1" type="Sprite" parent="." index="2"]
+
+position = Vector2( 130, 320 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 0, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Wood2" type="Sprite" parent="." index="3"]
+
+position = Vector2( 50, 320 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 260, 0, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Bush1" type="Sprite" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 40, 120 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 130, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bush1" index="0"]
+
+position = Vector2( 2.09808e-05, 6.67572e-06 )
+scale = Vector2( 0.937499, 0.9375 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bush1/StaticBody2D" index="0"]
+
+position = Vector2( 1.00136e-05, -4.76837e-07 )
+scale = Vector2( 3.28205, 3.28205 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bush2" type="Sprite" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 110, 120 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 130, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bush2" index="0"]
+
+position = Vector2( 1, 1 )
+scale = Vector2( 0.96875, 0.96875 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bush2/StaticBody2D" index="0"]
+
+position = Vector2( -1.16129, -1.16129 )
+scale = Vector2( 3.16625, 3.16625 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bush3" type="Sprite" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 40, 200 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 192, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bush3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bush3/StaticBody2D" index="0"]
+
+position = Vector2( 2.29478e-06, -1.55522e-05 )
+scale = Vector2( 3.13725, 3.07692 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bush4" type="Sprite" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 110, 200 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 192, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bush4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bush4/StaticBody2D" index="0"]
+
+position = Vector2( 2.86102e-06, -1.90735e-06 )
+scale = Vector2( 3.07692, 3.07692 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BushR1" type="Sprite" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 240, 120 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 130, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BushR1" index="0"]
+
+scale = Vector2( 0.9375, 0.9375 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BushR1/StaticBody2D" index="0"]
+
+scale = Vector2( 3.28205, 3.28205 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BushR2" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( 240, 190 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 130, 192, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BushR2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BushR2/StaticBody2D" index="0"]
+
+position = Vector2( -1.90735e-06, -1.90735e-06 )
+scale = Vector2( 3.07692, 3.07692 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BushR3" type="Sprite" parent="." index="10"]
+
+editor/display_folded = true
+position = Vector2( 310, 120 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 130, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BushR3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BushR3/StaticBody2D" index="0"]
+
+position = Vector2( -1.90735e-06, -1.90735e-06 )
+scale = Vector2( 3.07692, 3.07692 )
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BushR4" type="Sprite" parent="." index="11"]
+
+editor/display_folded = true
+position = Vector2( 310, 190 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 192, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BushR4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BushR4/StaticBody2D" index="0"]
+
+position = Vector2( -1.90735e-06, -1.90735e-06 )
+scale = Vector2( 3.07692, 3.07692 )
+shape = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Stairs" type="Sprite" parent="." index="12"]
+
+position = Vector2( 380, 410 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 400, 10, 352, 352 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Dark Tile" type="Sprite" parent="." index="13"]
+
+position = Vector2( 50, 410 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 260, 130, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Light Tile" type="Sprite" parent="." index="14"]
+
+position = Vector2( 140, 410 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 260, 260, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+

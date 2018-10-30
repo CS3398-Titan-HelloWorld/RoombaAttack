@@ -15,44 +15,44 @@ custom_solver_bias = 0.0
 a = Vector2( -0.0017614, -2.17614 )
 b = Vector2( -0.020666, 9.92968 )
 
-[sub_resource type="SegmentShape2D" id=2]
+[sub_resource type="SegmentShape2D" id=7]
 
 custom_solver_bias = 0.0
 a = Vector2( 0.362198, -26.433 )
 b = Vector2( 0.10424, 38.5586 )
 
-[sub_resource type="SegmentShape2D" id=3]
+[sub_resource type="SegmentShape2D" id=8]
 
 custom_solver_bias = 0.0
 a = Vector2( 0.363628, -20.0983 )
 b = Vector2( 0.363632, 31.0176 )
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 11.5036
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 65.5918
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 66.8542
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 55.1646, 46.4796 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 54.338, 47.1844 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 position = Vector2( 525, 300 )
 scale = Vector2( 1.5, 1.5 )
@@ -176,7 +176,7 @@ __meta__ = {
 
 position = Vector2( 5.94992, 34.0508 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Table/StaticBody2D" index="3"]
@@ -184,7 +184,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 6.80824, -34.5667 )
 rotation = 1.5708
 scale = Vector2( 0.996085, 1.27817 )
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Laptop1" type="Sprite" parent="." index="7"]
@@ -294,7 +294,7 @@ bounce = 0.0
 
 position = Vector2( -1.0686, 1.3183 )
 scale = Vector2( 5.46547, 5.84625 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -321,7 +321,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plant2/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -348,7 +348,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plant3/StaticBody2D" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -378,7 +378,7 @@ bounce = 0.0
 
 position = Vector2( -0.610443, 7.528 )
 rotation = 0.366254
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -409,7 +409,7 @@ bounce = 0.0
 position = Vector2( -0.290039, 9.25104 )
 rotation = 0.404229
 scale = Vector2( 0.975559, 1.03101 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -439,7 +439,7 @@ bounce = 0.0
 
 position = Vector2( -0.332642, 8.60954 )
 rotation = 0.368375
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
