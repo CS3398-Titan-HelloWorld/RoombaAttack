@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://LevelMap.tscn" type="PackedScene" id=2]
-[ext_resource path="res://EndPosition.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/CookieSpritebig.png" type="Texture" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PausePanel.gd" type="Script" id=5]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=6]
@@ -13,7 +13,6 @@ bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -0.842529, 1.0733, 0, 0, 0, 0, 1022.16, -0.287079, 0, 0, 0, 0, 1020.8, 596.917, 0, 0, 0, 0, -2.20291, 595.557, 0, 0, 0, 0, -0.842529, 1.0733 )
 }
-
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -53,7 +52,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="MobPath" type="Path2D" parent="." index="4"]
 
-editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
 
@@ -74,7 +72,6 @@ lookahead = 4.0
 
 [node name="EndPosition" type="Area2D" parent="." index="6"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -85,9 +82,15 @@ audio_bus_name = "Master"
 
 [node name="Sprite" type="Sprite" parent="EndPosition" index="0"]
 
-position = Vector2( 880, 452.3 )
-_sections_unfolded = [ "Transform" ]
-next_level = "res://OutsideLevel.tscn"
+position = Vector2( 880.058, 452.331 )
+scale = Vector2( 0.0790723, 0.0833476 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndPosition" index="1"]
+
+position = Vector2( 879.975, 451.999 )
+scale = Vector2( 0.204519, 1.65752 )
+shape = SubResource( 2 )
 
 [node name="Player" parent="." index="7" instance=ExtResource( 4 )]
 
@@ -97,7 +100,6 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 [node name="PausePanel" type="Panel" parent="." index="8"]
 
 pause_mode = 2
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -141,22 +143,12 @@ max_lines_visible = -1
 
 [node name="GUI" parent="." index="9" instance=ExtResource( 6 )]
 
-[node name="Enemies" type="Node2D" parent="." index="10"]
-
-position = Vector2( 191.777, 259.279 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Enemies" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-_sections_unfolded = [ "Collision", "Pickable", "collision" ]
-
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+
+[connection signal="body_entered" from="EndPosition" to="." method="_on_EndPosition_body_entered"]
 
 

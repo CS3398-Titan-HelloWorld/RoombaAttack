@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://LevelMap Resources/RoombaOutsideLevelTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://EndPosition.tscn" type="PackedScene" id=3]
+
+[node name="Node" type="Node" index="0"]
+
+[node name="Outside" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 6, 0, 2, 6, 0, 4, 7, 0, 6, 7, 0, 8, 8, 0, 10, 9, 0, 12, 8, 0, 14, 9, 0, 16, 8, 0, 18, 9, 0, 20, 12, 0, 22, 14, 0, 24, 3, 0, 26, 4, 0, 28, 12, 0, 30, 14, 0, 31, 2, 0, 65567, 2, 0, 131072, 7, 0, 131074, 6, 0, 131076, 6, 0, 131078, 7, 0, 131080, 9, 0, 131082, 8, 0, 131084, 9, 0, 131086, 8, 0, 131088, 9, 0, 131090, 8, 0, 131092, 13, 0, 131094, 15, 0, 131096, 10, 0, 131098, 11, 0, 131100, 13, 0, 131102, 15, 0, 131103, 2, 0, 196639, 2, 0, 262144, 7, 0, 262146, 7, 0, 262148, 6, 0, 262150, 6, 0, 262152, 7, 0, 262154, 7, 0, 262156, 6, 0, 262158, 6, 0, 262160, 7, 0, 262162, 7, 0, 262164, 5, 0, 262175, 2, 0, 327711, 2, 0, 393216, 6, 0, 393218, 7, 0, 393220, 7, 0, 393222, 6, 0, 393224, 6, 0, 393226, 7, 0, 393228, 7, 0, 393230, 6, 0, 393232, 6, 0, 393234, 7, 0, 393247, 1, 0, 458783, 1, 0, 524288, 6, 0, 524290, 6, 0, 524292, 7, 0, 524294, 7, 0, 524296, 6, 0, 524298, 6, 0, 524300, 7, 0, 524302, 7, 0, 524304, 6, 0, 524306, 6, 0, 524319, 1, 0, 589855, 1, 0, 655360, 7, 0, 655362, 6, 0, 655364, 6, 0, 655366, 7, 0, 655368, 7, 0, 655370, 6, 0, 655372, 6, 0, 655374, 7, 0, 655376, 7, 0, 655378, 6, 0, 655391, 1, 0, 720927, 1, 0, 786432, 7, 0, 786434, 7, 0, 786436, 6, 0, 786438, 6, 0, 786440, 7, 0, 786441, 7, 0, 786442, 7, 0, 786444, 6, 0, 786446, 6, 0, 786448, 7, 0, 786450, 7, 0, 786463, 1, 0, 851999, 1, 0, 917504, 6, 0, 917506, 7, 0, 917508, 7, 0, 917510, 6, 0, 917512, 6, 0, 917514, 7, 0, 917516, 7, 0, 917518, 6, 0, 917520, 6, 0, 917522, 7, 0, 917535, 2, 0, 983048, 8, 0, 983050, 9, 0, 983052, 8, 0, 983054, 9, 0, 983056, 8, 0, 983058, 9, 0, 983060, 3, 0, 983062, 4, 0, 983064, 12, 0, 983066, 14, 0, 983068, 3, 0, 983070, 4, 0, 983071, 2, 0, 1048576, 6, 0, 1048578, 6, 0, 1048580, 7, 0, 1048582, 7, 0, 1048607, 2, 0, 1114120, 9, 0, 1114122, 8, 0, 1114124, 9, 0, 1114126, 8, 0, 1114128, 9, 0, 1114130, 8, 0, 1114132, 10, 0, 1114134, 11, 0, 1114136, 13, 0, 1114138, 15, 0, 1114140, 10, 0, 1114142, 11, 0, 1114143, 2, 0, 1179679, 2, 0 )
+_sections_unfolded = [ "Cell" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+
+[node name="EndPosition" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 970, 320 )
+next_level = "res://Main.tscn"
+
+[node name="NoBushes" type="StaticBody2D" parent="." index="3"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="BothSides" type="CollisionPolygon2D" parent="NoBushes" index="0"]
+
+position = Vector2( 650, -10 )
+build_mode = 0
+polygon = PoolVector2Array( -10, 10, -10, 140, 60, 140, 100, 170, 170, 170, 220, 190, 290, 190, 340, 200, 340, 450, 220, 450, 160, 480, 90, 480, 40, 490, -10, 490, -10, 620, 370, 620, 370, 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+
