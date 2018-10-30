@@ -37,8 +37,5 @@ func _on_MobTimer_timeout():
 func _input(event):
 	if Input.is_action_pressed("ui_escape"):
 		get_tree().quit()
-		
-
-
 func _on_EndPosition_body_entered(body):
 	game_over()
