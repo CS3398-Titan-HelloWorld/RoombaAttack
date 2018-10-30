@@ -14,6 +14,12 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -0.842529, 1.0733, 0, 0, 0, 0, 1022.16, -0.287079, 0, 0, 0, 0, 1020.8, 596.917, 0, 0, 0, 0, -2.20291, 595.557, 0, 0, 0, 0, -0.842529, 1.0733 )
 }
 
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 114.058, 13.4603 )
+
 [node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
@@ -47,6 +53,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="MobPath" type="Path2D" parent="." index="4"]
 
+editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
 
@@ -65,7 +72,18 @@ lookahead = 4.0
 
 [node name="LevelMap" parent="." index="5" instance=ExtResource( 2 )]
 
-[node name="EndPosition" parent="." index="6" instance=ExtResource( 3 )]
+[node name="EndPosition" type="Area2D" parent="." index="6"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Sprite" type="Sprite" parent="EndPosition" index="0"]
 
 position = Vector2( 880, 452.3 )
 _sections_unfolded = [ "Transform" ]
@@ -122,6 +140,18 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="GUI" parent="." index="9" instance=ExtResource( 6 )]
+
+[node name="Enemies" type="Node2D" parent="." index="10"]
+
+position = Vector2( 191.777, 259.279 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Enemies" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+_sections_unfolded = [ "Collision", "Pickable", "collision" ]
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 
