@@ -19,7 +19,7 @@ _data = {
 custom_solver_bias = 0.0
 extents = Vector2( 114.058, 13.4603 )
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 Mob = null
@@ -52,6 +52,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="MobPath" type="Path2D" parent="." index="4"]
 
+editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
 
@@ -72,6 +73,7 @@ lookahead = 4.0
 
 [node name="EndPosition" type="Area2D" parent="." index="6"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -100,6 +102,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 [node name="PausePanel" type="Panel" parent="." index="8"]
 
 pause_mode = 2
+editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -142,6 +145,18 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="GUI" parent="." index="9" instance=ExtResource( 6 )]
+
+[node name="Enemies" type="Node2D" parent="." index="10"]
+
+position = Vector2( 191.777, 259.279 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Enemies" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+_sections_unfolded = [ "Collision", "Pickable", "collision" ]
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 
