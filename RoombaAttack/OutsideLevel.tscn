@@ -37,6 +37,7 @@ __meta__ = {
 position = Vector2( -300, -410 )
 scale = Vector2( 1.4375, 1.59375 )
 _sections_unfolded = [ "Transform" ]
+next_level = "res://Main.tscn"
 
 [node name="NoBushes" type="StaticBody2D" parent="." index="3"]
 

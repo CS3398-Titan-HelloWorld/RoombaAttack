@@ -14,7 +14,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -0.842529, 1.0733, 0, 0, 0, 0, 1022.16, -0.287079, 0, 0, 0, 0, 1020.8, 596.917, 0, 0, 0, 0, -2.20291, 595.557, 0, 0, 0, 0, -0.842529, 1.0733 )
 }
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 Mob = null
@@ -69,6 +69,7 @@ lookahead = 4.0
 
 collision_layer = 2
 _sections_unfolded = [ "Collision" ]
+next_level = "res://OutsideLevel.tscn"
 
 [node name="Player" parent="." index="7" instance=ExtResource( 4 )]
 
