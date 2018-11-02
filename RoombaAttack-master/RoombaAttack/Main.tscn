@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://LevelMap.tscn" type="PackedScene" id=2]
@@ -6,8 +6,6 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PausePanel.gd" type="Script" id=5]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Food.gd" type="Script" id=7]
-[ext_resource path="res://Sprites/food.png" type="Texture" id=8]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -21,17 +19,7 @@ _data = {
 custom_solver_bias = 0.0
 extents = Vector2( 114.058, 13.4603 )
 
-[sub_resource type="CircleShape2D" id=3]
-
-custom_solver_bias = 0.0
-radius = 24.9804
-
-[sub_resource type="CircleShape2D" id=4]
-
-custom_solver_bias = 0.0
-radius = 10.0
-
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 Mob = null
@@ -64,7 +52,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="MobPath" type="Path2D" parent="." index="4"]
 
-editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
 
@@ -85,7 +72,6 @@ lookahead = 4.0
 
 [node name="EndPosition" type="Area2D" parent="." index="6"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -108,13 +94,12 @@ shape = SubResource( 2 )
 
 [node name="Player" parent="." index="7" instance=ExtResource( 4 )]
 
-position = Vector2( 510.249, 344.802 )
+position = Vector2( 191.777, 259.279 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="PausePanel" type="Panel" parent="." index="8"]
 
 pause_mode = 2
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -157,56 +142,6 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="GUI" parent="." index="9" instance=ExtResource( 6 )]
-
-[node name="Food" type="RigidBody2D" parent="." index="10"]
-
-position = Vector2( 489.735, 209.498 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-script = ExtResource( 7 )
-
-[node name="Sprite" type="Sprite" parent="Food" index="0"]
-
-position = Vector2( -22.5362, -27.3964 )
-scale = Vector2( 0.0743096, 0.0774399 )
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Food" index="1"]
-
-shape = SubResource( 3 )
-
-[node name="Area2D" type="Area2D" parent="Food" index="2"]
-
-position = Vector2( -0.0336609, 0.172272 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Food/Area2D" index="0"]
-
-shape = SubResource( 4 )
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 
