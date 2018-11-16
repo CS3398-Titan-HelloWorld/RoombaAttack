@@ -18,6 +18,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+
 __meta__ = {
 "_edit_lock_": true
 }
@@ -37,5 +38,4 @@ shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="hit" from="." to="." method="_on_EndPosition2_hit"]
-
 

@@ -20,16 +20,19 @@ radius = 18.1246
 
 [node name="Main" type="Node" index="0"]
 
+
 script = ExtResource( 1 )
 Mob = null
 
 [node name="Runtime" parent="." index="0" instance=ExtResource( 2 )]
+
 
 [node name="Interrupt" type="Node" parent="." index="1"]
 
 [node name="GUI" parent="Interrupt" index="0" instance=ExtResource( 3 )]
 
 [node name="PausePanel" type="Panel" parent="Interrupt" index="1"]
+
 
 pause_mode = 2
 editor/display_folded = true
@@ -129,5 +132,6 @@ shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
+
 
 
