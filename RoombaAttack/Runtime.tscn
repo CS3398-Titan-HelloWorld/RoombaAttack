@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Runtime.gd" type="Script" id=1]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -0.842529, 1.0733, 0, 0, 0, 0, 1022.16, -0.287079, 0, 0, 0, 0, 1020.8, 596.917, 0, 0, 0, 0, -2.20291, 595.557, 0, 0, 0, 0, -0.842529, 1.0733 )
+}
+
+[node name="Runtime" type="Node" index="0"]
+
+script = ExtResource( 1 )
+Mob = null
+
+[node name="MobTimer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = false
+
+[node name="ScoreTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="StartTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[node name="StartPosition" type="Position2D" parent="." index="3"]
+
+position = Vector2( 156.897, 290.443 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MobPath" type="Path2D" parent="." index="4"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 1 )
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" index="0"]
+
+position = Vector2( -0.842529, 1.0733 )
+rotation = -0.00132979
+scale = Vector2( 2, 1e-05 )
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+

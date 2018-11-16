@@ -1,93 +1,26 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://LevelMap.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Runtime.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PausePanel.gd" type="Script" id=4]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=5]
-[ext_resource path="res://MovableObject.tscn" type="PackedScene" id=6]
+[ext_resource path="res://LevelMap.tscn" type="PackedScene" id=5]
 
-[sub_resource type="Curve2D" id=1]
+[node name="Main" type="Node" index="0"]
 
-bake_interval = 5.0
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -0.842529, 1.0733, 0, 0, 0, 0, 1022.16, -0.287079, 0, 0, 0, 0, 1020.8, 596.917, 0, 0, 0, 0, -2.20291, 595.557, 0, 0, 0, 0, -0.842529, 1.0733 )
-}
-
-[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 Mob = null
 
-[node name="MobTimer" type="Timer" parent="." index="0"]
+[node name="Runtime" parent="." index="0" instance=ExtResource( 2 )]
 
-process_mode = 1
-wait_time = 0.5
-one_shot = false
-autostart = false
 
-[node name="ScoreTimer" type="Timer" parent="." index="1"]
+[node name="Interrupt" type="Node" parent="." index="1"]
 
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
+[node name="GUI" parent="Interrupt" index="0" instance=ExtResource( 3 )]
 
-[node name="StartTimer" type="Timer" parent="." index="2"]
+[node name="PausePanel" type="Panel" parent="Interrupt" index="1"]
 
-process_mode = 1
-wait_time = 2.0
-one_shot = true
-autostart = false
-
-[node name="StartPosition" type="Position2D" parent="." index="3"]
-
-position = Vector2( 156.897, 290.443 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="MobPath" type="Path2D" parent="." index="4"]
-
-editor/display_folded = true
-self_modulate = Color( 0.5, 0.6, 1, 0.7 )
-curve = SubResource( 1 )
-
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" index="0"]
-
-position = Vector2( -0.842529, 1.0733 )
-rotation = -0.00132979
-scale = Vector2( 2, 1e-005 )
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = true
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="LevelMap" parent="." index="5" instance=ExtResource( 2 )]
-
-[node name="EndPosition" type="Area2D" parent="." index="6"]
-
-editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="Sprite" type="Sprite" parent="EndPosition" index="0"]
-
-position = Vector2( 880, 452.3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Player" parent="." index="7" instance=ExtResource( 3 )]
-
-position = Vector2( 191.777, 259.279 )
-_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
-
-[node name="PausePanel" type="Panel" parent="." index="8"]
 
 pause_mode = 2
 editor/display_folded = true
@@ -97,9 +30,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -142.0
-margin_top = -63.5
+margin_top = -64.0
 margin_right = 142.0
-margin_bottom = 63.5
+margin_bottom = 63.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -109,7 +42,7 @@ size_flags_vertical = 1
 script = ExtResource( 4 )
 _sections_unfolded = [ "Pause" ]
 
-[node name="PauseLabel" type="Label" parent="PausePanel" index="0"]
+[node name="PauseLabel" type="Label" parent="Interrupt/PausePanel" index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.5
@@ -132,29 +65,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="GUI" parent="." index="9" instance=ExtResource( 5 )]
+[node name="LevelMap" parent="." index="2" instance=ExtResource( 5 )]
 
-[node name="Enemies" type="Node2D" parent="." index="10"]
-
-position = Vector2( 191.777, 259.279 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Enemies" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-_sections_unfolded = [ "Collision", "Pickable", "collision" ]
-
-[node name="MovableObject" parent="." index="11" instance=ExtResource( 6 )]
-
-position = Vector2( 400.714, 271.555 )
-scale = Vector2( 0.36606, 0.361088 )
-
-[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
-
-[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
-
-[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 
 
