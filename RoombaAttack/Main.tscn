@@ -8,16 +8,19 @@
 
 [node name="Main" type="Node" index="0"]
 
+
 script = ExtResource( 1 )
 Mob = null
 
 [node name="Runtime" parent="." index="0" instance=ExtResource( 2 )]
+
 
 [node name="Interrupt" type="Node" parent="." index="1"]
 
 [node name="GUI" parent="Interrupt" index="0" instance=ExtResource( 3 )]
 
 [node name="PausePanel" type="Panel" parent="Interrupt" index="1"]
+
 
 pause_mode = 2
 editor/display_folded = true
@@ -63,5 +66,6 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="LevelMap" parent="." index="2" instance=ExtResource( 5 )]
+
 
 
