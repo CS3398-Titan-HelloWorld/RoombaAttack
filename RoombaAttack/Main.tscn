@@ -4,9 +4,9 @@
 [ext_resource path="res://Runtime.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PausePanel.gd" type="Script" id=4]
-[ext_resource path="res://FoodItem.gd" type="Script" id=5]
-[ext_resource path="res://food.png" type="Texture" id=6]
-[ext_resource path="res://OutsideLevel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://OutsideLevel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://FoodItem.gd" type="Script" id=6]
+[ext_resource path="res://food.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -74,9 +74,10 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="FoodItem" type="RigidBody2D" parent="." index="2"]
+[node name="First Level" parent="." index="2" instance=ExtResource( 5 )]
 
-editor/display_folded = true
+[node name="FoodItem" type="RigidBody2D" parent="." index="3"]
+
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -95,13 +96,13 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="FoodItem" index="0"]
 
 position = Vector2( 556.25, 193.219 )
 scale = Vector2( 0.0641667, 0.062387 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FoodItem" index="1"]
 
@@ -129,7 +130,5 @@ shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Node" parent="." index="3" instance=ExtResource( 7 )]
 
 
