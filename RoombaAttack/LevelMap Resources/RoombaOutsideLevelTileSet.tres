@@ -1,11 +1,26 @@
-[gd_resource type="TileSet" load_steps=10 format=2]
+[gd_resource type="TileSet" load_steps=15 format=2]
 
 [ext_resource path="res://LevelMap Resources/Screen Shot 2018-10-24 at 11.06.53 PM.png" type="Texture" id=1]
+[ext_resource path="res://LevelMap Resources/wood.png" type="Texture" id=2]
+[ext_resource path="res://LevelMap Resources/Plant 2.png" type="Texture" id=3]
+[ext_resource path="res://LevelMap Resources/Black Box.png" type="Texture" id=4]
+[ext_resource path="res://LevelMap Resources/White Box.png" type="Texture" id=5]
+[ext_resource path="res://LevelMap Resources/Benchs.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.75, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9.75, 10 )
+extents = Vector2( 10, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
@@ -28,16 +43,6 @@ custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
 [sub_resource type="RectangleShape2D" id=8]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -82,7 +87,7 @@ extents = Vector2( 10, 10 )
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 7 ),
 "shape_transform": Transform2D( 3.5, 0, 0, 3.5, 32, 32 )
 } ]
 4/name = "Bush2"
@@ -96,7 +101,7 @@ extents = Vector2( 10, 10 )
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 2 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 3.4, 0, 0, 3.4, 30.8387, 30.8387 )
 } ]
 5/name = "Stairs"
@@ -155,7 +160,7 @@ extents = Vector2( 10, 10 )
 10/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 3 ),
+"shape": SubResource( 1 ),
 "shape_transform": Transform2D( 3.4, 0, 0, 3.3, 32, 32 )
 } ]
 11/name = "Bush4"
@@ -169,7 +174,7 @@ extents = Vector2( 10, 10 )
 11/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 4 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 3.3, 0, 0, 3.3, 32, 32 )
 } ]
 12/name = "BushR1"
@@ -183,7 +188,7 @@ extents = Vector2( 10, 10 )
 12/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 5 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 3.5, 0, 0, 3.5, 32, 32 )
 } ]
 13/name = "BushR2"
@@ -197,7 +202,7 @@ extents = Vector2( 10, 10 )
 13/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 3.3, 0, 0, 3.3, 32, 32 )
 } ]
 14/name = "BushR3"
@@ -211,7 +216,7 @@ extents = Vector2( 10, 10 )
 14/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 7 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 3.3, 0, 0, 3.3, 32, 32 )
 } ]
 15/name = "BushR4"
@@ -225,7 +230,61 @@ extents = Vector2( 10, 10 )
 15/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 8 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 3.3, 0, 0, 3.3, 32, 32 )
 } ]
+16/name = "Wood"
+16/texture = ExtResource( 2 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 440, 64, 32, 32 )
+16/is_autotile = false
+16/occluder_offset = Vector2( 16, 16 )
+16/navigation_offset = Vector2( 16, 16 )
+16/shapes = [  ]
+17/name = "Plant 2"
+17/texture = ExtResource( 3 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 0, 0, 81, 81 )
+17/is_autotile = false
+17/occluder_offset = Vector2( 40.5, 40.5 )
+17/navigation_offset = Vector2( 40.5, 40.5 )
+17/shapes = [  ]
+18/name = "Black Box"
+18/texture = ExtResource( 4 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 0, 0, 34, 34 )
+18/is_autotile = false
+18/occluder_offset = Vector2( 17, 17 )
+18/navigation_offset = Vector2( 17, 17 )
+18/shapes = [  ]
+19/name = "White Box"
+19/texture = ExtResource( 5 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 0, 0, 32, 32 )
+19/is_autotile = false
+19/occluder_offset = Vector2( 16, 16 )
+19/navigation_offset = Vector2( 16, 16 )
+19/shapes = [  ]
+20/name = "Right Bench"
+20/texture = ExtResource( 6 )
+20/tex_offset = Vector2( 0, 0 )
+20/modulate = Color( 1, 1, 1, 1 )
+20/region = Rect2( 535, 120, 70, 290 )
+20/is_autotile = false
+20/occluder_offset = Vector2( 35, 145 )
+20/navigation_offset = Vector2( 35, 145 )
+20/shapes = [  ]
+21/name = "Bottom Bench"
+21/texture = ExtResource( 6 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 305, 410, 300, 110 )
+21/is_autotile = false
+21/occluder_offset = Vector2( 150, 55 )
+21/navigation_offset = Vector2( 150, 55 )
+21/shapes = [  ]
 
