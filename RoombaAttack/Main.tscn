@@ -32,7 +32,6 @@ Mob = null
 [node name="PausePanel" type="Panel" parent="Interrupt" index="1"]
 
 pause_mode = 2
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -78,6 +77,7 @@ max_lines_visible = -1
 
 [node name="FoodItem" type="RigidBody2D" parent="." index="3"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
