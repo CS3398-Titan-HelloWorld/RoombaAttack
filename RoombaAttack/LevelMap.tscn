@@ -1,15 +1,16 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://LevelMap Resources/Chair.png" type="Texture" id=2]
-[ext_resource path="res://LevelMap Resources/WeeodenGrainedTable.jpg" type="Texture" id=3]
-[ext_resource path="res://Table.gd" type="Script" id=4]
-[ext_resource path="res://LevelMap Resources/Laptop1.png" type="Texture" id=5]
-[ext_resource path="res://LevelMap Resources/Picture1.png" type="Texture" id=6]
-[ext_resource path="res://LevelMap Resources/Notebook1.png" type="Texture" id=7]
-[ext_resource path="res://LevelMap Resources/Coffee1.png" type="Texture" id=8]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://EndPosition.tscn" type="PackedScene" id=10]
+[ext_resource path="res://LevelMap Resources/RoombaOutsideLevelTileSet.tres" type="TileSet" id=2]
+[ext_resource path="res://LevelMap Resources/Chair.png" type="Texture" id=3]
+[ext_resource path="res://LevelMap Resources/WeeodenGrainedTable.jpg" type="Texture" id=4]
+[ext_resource path="res://Table.gd" type="Script" id=5]
+[ext_resource path="res://LevelMap Resources/Laptop1.png" type="Texture" id=6]
+[ext_resource path="res://LevelMap Resources/Picture1.png" type="Texture" id=7]
+[ext_resource path="res://LevelMap Resources/Notebook1.png" type="Texture" id=8]
+[ext_resource path="res://LevelMap Resources/Coffee1.png" type="Texture" id=9]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://EndPosition.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SegmentShape2D" id=1]
 
@@ -54,7 +55,7 @@ extents = Vector2( 55.1646, 46.4796 )
 custom_solver_bias = 0.0
 extents = Vector2( 54.338, 47.1844 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
 position = Vector2( 525, 300 )
 scale = Vector2( 1.5, 1.5 )
@@ -70,73 +71,95 @@ __meta__ = {
 
 [node name="Node" type="Node" parent="." index="0"]
 
-[node name="Chair1" type="Sprite" parent="Node" index="0"]
+[node name="TileMap" type="TileMap" parent="Node" index="0"]
+
+position = Vector2( 1.52673, 1.52673 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 23, 0, 1, 22, 0, 2, 23, 0, 3, 22, 0, 4, 23, 0, 5, 22, 0, 6, 23, 0, 7, 22, 0, 8, 23, 0, 9, 22, 0, 10, 23, 0, 11, 22, 0, 12, 23, 0, 13, 22, 0, 14, 23, 0, 15, 22, 0, 16, 23, 0, 17, 22, 0, 18, 23, 0, 19, 22, 0, 20, 23, 0, 21, 22, 0, 22, 23, 0, 23, 22, 0, 24, 23, 0, 25, 22, 0, 26, 23, 0, 27, 22, 0, 28, 23, 0, 29, 22, 0, 30, 23, 0, 31, 22, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 65550, 2, 0, 65551, 2, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 1, 0, 65556, 1, 0, 65557, 1, 0, 65558, 1, 0, 65559, 1, 0, 65560, 2, 0, 65561, 2, 0, 65562, 2, 0, 65563, 2, 0, 65564, 2, 0, 65565, 2, 0, 65566, 2, 0, 65567, 2, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 2, 0, 131081, 2, 0, 131082, 2, 0, 131083, 2, 0, 131084, 2, 0, 131085, 2, 0, 131086, 2, 0, 131087, 2, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 1, 0, 131095, 1, 0, 131096, 2, 0, 131097, 2, 0, 131098, 2, 0, 131099, 2, 0, 131100, 2, 0, 131101, 2, 0, 131102, 2, 0, 131103, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 2, 0, 196625, 2, 0, 196626, 2, 0, 196627, 2, 0, 196628, 2, 0, 196629, 2, 0, 196630, 2, 0, 196631, 2, 0, 196632, 1, 0, 196633, 1, 0, 196634, 1, 0, 196635, 1, 0, 196636, 1, 0, 196637, 1, 0, 196638, 1, 0, 196639, 1, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 2, 0, 262161, 2, 0, 262162, 2, 0, 262163, 2, 0, 262164, 2, 0, 262165, 2, 0, 262166, 2, 0, 262167, 2, 0, 262168, 1, 0, 262169, 1, 0, 262170, 1, 0, 262171, 1, 0, 262172, 1, 0, 262173, 1, 0, 262174, 1, 0, 262175, 1, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 327695, 2, 0, 327696, 1, 0, 327697, 1, 0, 327698, 1, 0, 327699, 1, 0, 327700, 1, 0, 327701, 1, 0, 327702, 1, 0, 327703, 1, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 327710, 2, 0, 327711, 2, 0, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0, 393228, 2, 0, 393229, 2, 0, 393230, 2, 0, 393231, 2, 0, 393232, 1, 0, 393233, 1, 0, 393234, 1, 0, 393235, 1, 0, 393236, 1, 0, 393237, 1, 0, 393238, 1, 0, 393239, 1, 0, 393240, 2, 0, 393241, 2, 0, 393242, 2, 0, 393243, 2, 0, 393244, 2, 0, 393245, 2, 0, 393246, 2, 0, 393247, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 2, 0, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 458772, 2, 0, 458773, 2, 0, 458774, 2, 0, 458775, 2, 0, 458776, 1, 0, 458777, 1, 0, 458778, 1, 0, 458779, 1, 0, 458780, 1, 0, 458781, 1, 0, 458782, 1, 0, 458783, 1, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 2, 0, 524305, 2, 0, 524306, 2, 0, 524307, 2, 0, 524308, 2, 0, 524309, 2, 0, 524310, 2, 0, 524311, 2, 0, 524312, 1, 0, 524313, 1, 0, 524314, 1, 0, 524315, 1, 0, 524316, 1, 0, 524317, 1, 0, 524318, 1, 0, 524319, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 589848, 2, 0, 589849, 2, 0, 589850, 2, 0, 589851, 2, 0, 589852, 2, 0, 589853, 2, 0, 589854, 2, 0, 589855, 2, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655379, 1, 0, 655380, 1, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 655384, 2, 0, 655385, 2, 0, 655386, 2, 0, 655387, 2, 0, 655388, 2, 0, 655389, 2, 0, 655390, 2, 0, 655391, 2, 0, 720896, 2, 0, 720897, 2, 0, 720898, 2, 0, 720899, 2, 0, 720900, 2, 0, 720901, 2, 0, 720902, 2, 0, 720903, 2, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0, 720907, 1, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720912, 2, 0, 720913, 2, 0, 720914, 2, 0, 720915, 2, 0, 720916, 2, 0, 720917, 2, 0, 720918, 2, 0, 720919, 2, 0, 720920, 1, 0, 720921, 1, 0, 720922, 1, 0, 720923, 1, 0, 720924, 1, 0, 720925, 1, 0, 720926, 1, 0, 720927, 1, 0, 786432, 2, 0, 786433, 2, 0, 786434, 2, 0, 786435, 2, 0, 786436, 2, 0, 786437, 2, 0, 786438, 2, 0, 786439, 2, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 2, 0, 786449, 2, 0, 786450, 2, 0, 786451, 2, 0, 786452, 2, 0, 786453, 2, 0, 786454, 2, 0, 786455, 2, 0, 786456, 1, 0, 786457, 1, 0, 786458, 1, 0, 786459, 1, 0, 786460, 1, 0, 786461, 1, 0, 786462, 1, 0, 786463, 1, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 2, 0, 851977, 2, 0, 851978, 2, 0, 851979, 2, 0, 851980, 2, 0, 851981, 2, 0, 851982, 2, 0, 851983, 2, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 2, 0, 851993, 2, 0, 851994, 2, 0, 851995, 2, 0, 851996, 2, 0, 851997, 2, 0, 851998, 2, 0, 851999, 2, 0, 917504, 1, 0, 917505, 1, 0, 917506, 1, 0, 917507, 1, 0, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 917511, 1, 0, 917512, 2, 0, 917513, 2, 0, 917514, 2, 0, 917515, 2, 0, 917516, 2, 0, 917517, 2, 0, 917518, 2, 0, 917519, 2, 0, 917520, 1, 0, 917521, 1, 0, 917522, 1, 0, 917523, 1, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0, 917528, 2, 0, 917529, 2, 0, 917530, 2, 0, 917531, 2, 0, 917532, 2, 0, 917533, 2, 0, 917534, 2, 0, 917535, 2, 0, 983040, 2, 0, 983041, 2, 0, 983042, 2, 0, 983043, 2, 0, 983044, 2, 0, 983045, 2, 0, 983046, 2, 0, 983047, 2, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 2, 0, 983057, 2, 0, 983058, 2, 0, 983059, 2, 0, 983060, 2, 0, 983061, 2, 0, 983062, 2, 0, 983063, 2, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 983070, 1, 0, 983071, 1, 0, 1048576, 2, 0, 1048577, 2, 0, 1048578, 2, 0, 1048579, 2, 0, 1048580, 2, 0, 1048581, 2, 0, 1048582, 2, 0, 1048583, 2, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 2, 0, 1048593, 2, 0, 1048594, 2, 0, 1048595, 2, 0, 1048596, 2, 0, 1048597, 2, 0, 1048598, 2, 0, 1048599, 2, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 1, 0, 1048603, 1, 0, 1048604, 1, 0, 1048605, 1, 0, 1048606, 1, 0, 1048607, 1, 0, 1114112, 1, 0, 1114113, 1, 0, 1114114, 1, 0, 1114115, 1, 0, 1114116, 1, 0, 1114117, 1, 0, 1114118, 1, 0, 1114119, 1, 0, 1114120, 2, 0, 1114121, 2, 0, 1114122, 2, 0, 1114123, 2, 0, 1114124, 2, 0, 1114125, 2, 0, 1114126, 2, 0, 1114127, 2, 0, 1114128, 1, 0, 1114129, 1, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0, 1114136, 2, 0, 1114137, 2, 0, 1114138, 2, 0, 1114139, 2, 0, 1114140, 2, 0, 1114141, 2, 0, 1114142, 2, 0, 1114143, 2, 0, 1179648, 1, 0, 1179649, 1, 0, 1179650, 1, 0, 1179651, 1, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 2, 0, 1179657, 2, 0, 1179658, 2, 0, 1179659, 2, 0, 1179660, 2, 0, 1179661, 2, 0, 1179662, 2, 0, 1179663, 2, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 1, 0, 1179672, 2, 0, 1179673, 2, 0, 1179674, 2, 0, 1179675, 2, 0, 1179676, 2, 0, 1179677, 2, 0, 1179678, 2, 0, 1179679, 2, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Chair1" type="Sprite" parent="Node" index="1"]
 
 position = Vector2( 709.354, 502.103 )
 rotation = 0.591866
 scale = Vector2( 0.4186, 0.403818 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Chair2" type="Sprite" parent="Node" index="1"]
+[node name="Chair2" type="Sprite" parent="Node" index="2"]
 
 position = Vector2( 401.91, 507.231 )
 rotation = 0.209608
 scale = Vector2( 0.4186, 0.403818 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Chair3" type="Sprite" parent="Node" index="2"]
+[node name="Chair3" type="Sprite" parent="Node" index="3"]
 
 position = Vector2( 109.471, 395.838 )
 rotation = 2.48487
 scale = Vector2( 0.4186, 0.403818 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Chair4" type="Sprite" parent="Node" index="3"]
+[node name="Chair4" type="Sprite" parent="Node" index="4"]
 
 position = Vector2( 356.829, 95.928 )
 rotation = -2.24052
 scale = Vector2( 0.4186, 0.403818 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Chair5" type="Sprite" parent="Node" index="4"]
+[node name="Chair5" type="Sprite" parent="Node" index="5"]
 
 position = Vector2( 658.101, 86.8815 )
 rotation = 3.13114
 scale = Vector2( 0.4186, 0.403818 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Chair6" type="Sprite" parent="Node" index="5"]
+[node name="Chair6" type="Sprite" parent="Node" index="6"]
 
 position = Vector2( 953.719, 262.819 )
 rotation = -0.968945
 scale = Vector2( 0.4186, 0.403818 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Table" type="Sprite" parent="Node" index="6"]
+[node name="Table" type="Sprite" parent="Node" index="7"]
 
 editor/display_folded = true
 position = Vector2( 524.651, 299.567 )
 scale = Vector2( 2.17327, 1.5 )
-texture = ExtResource( 3 )
-script = ExtResource( 4 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -193,12 +216,12 @@ scale = Vector2( 0.996085, 1.27817 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Laptop1" type="Sprite" parent="Node" index="7"]
+[node name="Laptop1" type="Sprite" parent="Node" index="8"]
 
 editor/display_folded = true
 position = Vector2( 290.328, 187.344 )
 scale = Vector2( 0.531008, 0.538512 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
@@ -220,13 +243,13 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( 49.05, 49.9432, 45.7826, 85.6363, 44.7144, 52.2803, 71.4203, -20.7518, -37.1837, -62.1835, -66.7382, 10.1464, -90.9515, 36.4801, 44.3583, 85.9875 )
 
-[node name="Laptop2" type="Sprite" parent="Node" index="8"]
+[node name="Laptop2" type="Sprite" parent="Node" index="9"]
 
 editor/display_folded = true
 position = Vector2( 868.781, 213.409 )
 rotation = 1.75183
 scale = Vector2( 0.531008, 0.538512 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
@@ -248,13 +271,13 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( 47.2006, 53.0367, 45.5556, 84.6266, -88.5268, 36.6393, -67.3281, 9.64221, -40.7748, -61.5442, 70.5961, -21.489, 45.4777, 52.5577, 46.7874, 83.9587 )
 
-[node name="Laptop3" type="Sprite" parent="Node" index="9"]
+[node name="Laptop3" type="Sprite" parent="Node" index="10"]
 
 editor/display_folded = true
 position = Vector2( 412.468, 406.898 )
 rotation = -3.0185
 scale = Vector2( 0.531008, 0.538512 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
@@ -279,12 +302,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Plant1" type="Sprite" parent="Node" index="10"]
+[node name="Plant1" type="Sprite" parent="Node" index="11"]
 
 editor/display_folded = true
 position = Vector2( 805.518, 299.479 )
 scale = Vector2( 0.425999, 0.37716 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -309,12 +332,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Plant2" type="Sprite" parent="Node" index="11"]
+[node name="Plant2" type="Sprite" parent="Node" index="12"]
 
 editor/display_folded = true
 position = Vector2( 245.018, 300.556 )
 scale = Vector2( 0.425999, 0.37716 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -337,12 +360,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Plant3" type="Sprite" parent="Node" index="12"]
+[node name="Plant3" type="Sprite" parent="Node" index="13"]
 
 editor/display_folded = true
 position = Vector2( 525.128, 298.408 )
 scale = Vector2( 0.425999, 0.37716 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -365,13 +388,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Notebook1" type="Sprite" parent="Node" index="13"]
+[node name="Notebook1" type="Sprite" parent="Node" index="14"]
 
 editor/display_folded = true
 position = Vector2( 678.081, 183.266 )
 rotation = -0.804033
 scale = Vector2( 0.49279, 0.467835 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -396,13 +419,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Notebook2" type="Sprite" parent="Node" index="14"]
+[node name="Notebook2" type="Sprite" parent="Node" index="15"]
 
 editor/display_folded = true
 position = Vector2( 193.653, 426.178 )
 rotation = -1.40743
 scale = Vector2( 0.49279, 0.467835 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -428,13 +451,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Notebook3" type="Sprite" parent="Node" index="15"]
+[node name="Notebook3" type="Sprite" parent="Node" index="16"]
 
 editor/display_folded = true
 position = Vector2( 791.201, 415.339 )
 rotation = -2.9323
 scale = Vector2( 0.49279, 0.467835 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -459,12 +482,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Coffee1" type="Sprite" parent="Node" index="16"]
+[node name="Coffee1" type="Sprite" parent="Node" index="17"]
 
 editor/display_folded = true
 position = Vector2( 349.239, 212.617 )
 scale = Vector2( 0.488622, 0.474441 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -491,13 +514,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Coffee2" type="Sprite" parent="Node" index="17"]
+[node name="Coffee2" type="Sprite" parent="Node" index="18"]
 
 editor/display_folded = true
 position = Vector2( 482.381, 428.821 )
 rotation = 1.65381
 scale = Vector2( 0.488622, 0.474441 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -526,13 +549,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Coffee3" type="Sprite" parent="Node" index="18"]
+[node name="Coffee3" type="Sprite" parent="Node" index="19"]
 
 editor/display_folded = true
 position = Vector2( 644.307, 213.564 )
 rotation = 2.03554
 scale = Vector2( 0.488622, 0.474441 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -558,14 +581,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="Node" index="19" instance=ExtResource( 9 )]
+[node name="Player" parent="Node" index="20" instance=ExtResource( 10 )]
 
-position = Vector2( 183.264, 255.284 )
+position = Vector2( 822.969, 157.572 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="EndPosition2" parent="Node" index="20" instance=ExtResource( 10 )]
+[node name="EndPosition2" parent="Node" index="21" instance=ExtResource( 11 )]
 
 position = Vector2( 873.297, 442.756 )
-next_level = "res://OutsideLevel.tscn"
+next_level = "res://End of Game.tscn"
 
 
