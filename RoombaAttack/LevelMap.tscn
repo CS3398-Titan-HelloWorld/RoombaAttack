@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://LevelMap Resources/RoombaOutsideLevelTileSet.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://LevelMap Resources/Coffee1.png" type="Texture" id=9]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://EndPosition.tscn" type="PackedScene" id=11]
+[ext_resource path="res://PausePanel.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SegmentShape2D" id=1]
 
@@ -55,7 +56,7 @@ extents = Vector2( 55.1646, 46.4796 )
 custom_solver_bias = 0.0
 extents = Vector2( 54.338, 47.1844 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 position = Vector2( 525, 300 )
 scale = Vector2( 1.5, 1.5 )
@@ -590,5 +591,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 position = Vector2( 873.297, 442.756 )
 next_level = "res://End of Game.tscn"
+
+[node name="PausePanel" parent="Node" index="22" instance=ExtResource( 12 )]
 
 

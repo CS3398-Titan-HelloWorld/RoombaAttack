@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://Runtime.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://PausePanel.gd" type="Script" id=4]
-[ext_resource path="res://OutsideLevel.tscn" type="PackedScene" id=5]
-[ext_resource path="res://FoodItem.gd" type="Script" id=6]
-[ext_resource path="res://food.png" type="Texture" id=7]
+[ext_resource path="res://OutsideLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Runtime.tscn" type="PackedScene" id=3]
+[ext_resource path="res://FoodItem.gd" type="Script" id=4]
+[ext_resource path="res://food.png" type="Texture" id=5]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://PausePanel.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -18,66 +18,17 @@ radius = 17.5071
 custom_solver_bias = 0.0
 radius = 18.1246
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 Mob = null
 
-[node name="Runtime" parent="." index="0" instance=ExtResource( 2 )]
+[node name="First Level" parent="." index="0" instance=ExtResource( 2 )]
 
-[node name="Interrupt" type="Node" parent="." index="1"]
+[node name="Runtime" parent="." index="1" instance=ExtResource( 3 )]
 
-[node name="GUI" parent="Interrupt" index="0" instance=ExtResource( 3 )]
+[node name="FoodItem" type="RigidBody2D" parent="." index="2"]
 
-[node name="PausePanel" type="Panel" parent="Interrupt" index="1"]
-
-pause_mode = 2
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -142.0
-margin_top = -64.0
-margin_right = 142.0
-margin_bottom = 63.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-script = ExtResource( 4 )
-_sections_unfolded = [ "Pause" ]
-
-[node name="PauseLabel" type="Label" parent="Interrupt/PausePanel" index="0"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -141.0
-margin_top = -49.5
-margin_bottom = 1.5
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Paused"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="First Level" parent="." index="2" instance=ExtResource( 5 )]
-
-[node name="FoodItem" type="RigidBody2D" parent="." index="3"]
-
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -96,13 +47,13 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
-script = ExtResource( 6 )
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="FoodItem" index="0"]
 
 position = Vector2( 556.25, 193.219 )
 scale = Vector2( 0.0641667, 0.062387 )
-texture = ExtResource( 7 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FoodItem" index="1"]
 
@@ -130,5 +81,11 @@ shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Interrupt" type="Node" parent="." index="3"]
+
+[node name="GUI" parent="Interrupt" index="0" instance=ExtResource( 6 )]
+
+[node name="PausePanel" parent="Interrupt" index="1" instance=ExtResource( 7 )]
 
 

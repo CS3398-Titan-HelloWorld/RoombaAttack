@@ -4,7 +4,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EndPosition.tscn" type="PackedScene" id=3]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 [node name="Outside" type="TileMap" parent="." index="0"]
 

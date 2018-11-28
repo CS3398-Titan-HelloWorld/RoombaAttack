@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://LevelMap Resources/RoombaOutsideLevelTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://LevelMap Resources/KitchenTileSet.tres" type="TileSet" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://EndPosition.tscn" type="PackedScene" id=4]
 [ext_resource path="res://FoodItem.tscn" type="PackedScene" id=5]
+[ext_resource path="res://PausePanel.tscn" type="PackedScene" id=6]
 
-[node name="Kitchen Level" type="Node" index="0"]
+[node name="Kitchen Level" type="Node"]
 
 [node name="Floor" type="TileMap" parent="." index="0"]
 
@@ -62,5 +63,7 @@ next_level = "res://Living Room Level.tscn"
 [node name="FoodItem" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 90, 30 )
+
+[node name="PausePanel" parent="." index="5" instance=ExtResource( 6 )]
 
 
