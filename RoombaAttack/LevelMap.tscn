@@ -54,7 +54,7 @@ extents = Vector2( 55.1646, 46.4796 )
 custom_solver_bias = 0.0
 extents = Vector2( 54.338, 47.1844 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 position = Vector2( 525, 300 )
 scale = Vector2( 1.5, 1.5 )
@@ -565,6 +565,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="EndPosition2" parent="Node" index="20" instance=ExtResource( 10 )]
 
+position = Vector2( 873.297, 442.756 )
 next_level = "res://OutsideLevel.tscn"
 
 

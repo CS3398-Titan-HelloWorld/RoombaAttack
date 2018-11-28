@@ -4,7 +4,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EndPosition.tscn" type="PackedScene" id=3]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="Outside" type="TileMap" parent="." index="0"]
 
@@ -36,10 +36,10 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="EndPosition" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( -300, -410 )
+position = Vector2( 970, 320 )
 scale = Vector2( 1.4375, 1.59375 )
 _sections_unfolded = [ "Transform" ]
-next_level = "res://LevelMap.tscn"
+next_level = "res://Entry Way Level.tscn"
 
 [node name="NoBushes" type="StaticBody2D" parent="." index="3"]
 
