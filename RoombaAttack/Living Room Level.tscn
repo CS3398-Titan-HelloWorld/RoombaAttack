@@ -66,4 +66,40 @@ position = Vector2( 810, 70 )
 
 [node name="PausePanel" parent="." index="5" instance=ExtResource( 6 )]
 
+[node name="Furniture" type="StaticBody2D" parent="." index="6"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Couch" type="CollisionPolygon2D" parent="Furniture" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 1020, 150, 880, 150, 880, 480, 1020, 480 )
+
+[node name="Chairs" type="CollisionPolygon2D" parent="Furniture" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 740, 10, 100, 10, 100, 110, 120, 120, 120, 150, 130, 170, 250, 170, 710, 170, 730, 150, 730, 120, 740, 110 )
+
+[node name="Border" type="StaticBody2D" parent="." index="7"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Outside" type="CollisionPolygon2D" parent="Border" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 1020, 600, 0, 600, 0, 0, 1020, 0, 1020, 590, 1030, 590, 1030, -10, -10, -10, -10, 610, 1030, 610, 1030, 600 )
+
 

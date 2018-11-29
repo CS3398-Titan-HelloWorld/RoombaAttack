@@ -7,7 +7,7 @@
 [ext_resource path="res://FoodItem.tscn" type="PackedScene" id=5]
 [ext_resource path="res://PausePanel.tscn" type="PackedScene" id=6]
 
-[node name="Kitchen Level" type="Node"]
+[node name="Kitchen Level" type="Node" index="0"]
 
 [node name="Floor" type="TileMap" parent="." index="0"]
 
@@ -65,5 +65,41 @@ next_level = "res://Living Room Level.tscn"
 position = Vector2( 90, 30 )
 
 [node name="PausePanel" parent="." index="5" instance=ExtResource( 6 )]
+
+[node name="Border" type="StaticBody2D" parent="." index="6"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 1010, 10, 10, 10, 10, 600, 1010, 600, 1010, 20, 1020, 20, 1020, 610, 0, 610, 0, 0, 1020, 0 )
+
+[node name="Counter" type="StaticBody2D" parent="." index="7"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="ISland" type="CollisionPolygon2D" parent="Counter" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 600, 330, 330, 330, 330, 520, 600, 520 )
+
+[node name="L Shape" type="CollisionPolygon2D" parent="Counter" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 780, 300, 780, 620, 930, 620, 930, 90, 330, 90, 330, 60, 180, 60, 180, 300 )
 
 

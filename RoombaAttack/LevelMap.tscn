@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://LevelMap Resources/RoombaOutsideLevelTileSet.tres" type="TileSet" id=2]
@@ -28,8 +28,13 @@ b = Vector2( 0.10424, 38.5586 )
 [sub_resource type="SegmentShape2D" id=3]
 
 custom_solver_bias = 0.0
-a = Vector2( 0.363628, -20.0983 )
+a = Vector2( 0.31719, 0.561565 )
 b = Vector2( 0.363632, 31.0176 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8.19935, 1.40215 )
 
 [sub_resource type="CircleShape2D" id=4]
 
@@ -56,7 +61,7 @@ extents = Vector2( 55.1646, 46.4796 )
 custom_solver_bias = 0.0
 extents = Vector2( 54.338, 47.1844 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
 position = Vector2( 525, 300 )
 scale = Vector2( 1.5, 1.5 )
@@ -216,6 +221,11 @@ rotation = 1.5708
 scale = Vector2( 0.996085, 1.27817 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Node/Table/StaticBody2D" index="4"]
+
+position = Vector2( 24.5078, -33.4969 )
+shape = SubResource( 9 )
 
 [node name="Laptop1" type="Sprite" parent="Node" index="8"]
 
@@ -584,14 +594,68 @@ __meta__ = {
 
 [node name="Player" parent="Node" index="20" instance=ExtResource( 10 )]
 
-position = Vector2( 822.969, 157.572 )
+position = Vector2( 904.836, 24.6856 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="EndPosition2" parent="Node" index="21" instance=ExtResource( 11 )]
 
-position = Vector2( 873.297, 442.756 )
+position = Vector2( 177.964, 350.844 )
 next_level = "res://End of Game.tscn"
 
 [node name="PausePanel" parent="Node" index="22" instance=ExtResource( 12 )]
+
+[node name="Border" type="StaticBody2D" parent="Node" index="23"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node/Border" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 1020.3, 600.249, 1020.14, 10.966, 9.42433, 10.2415, 10.3099, 597.995, 1011.2, 600.41, 1011.2, 610.875, 0.407974, 609.023, 0.649475, 0.259079, 1027.22, 2.03014, 1028.03, 611.519, 1015.95, 610.312 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Objects" type="StaticBody2D" parent="Node" index="24"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Chair1" type="CollisionPolygon2D" parent="Node/Objects" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 946.753, 215.934, 916.016, 232.908, 916.016, 284.749, 925.65, 299.888, 955.011, 307.229, 984.831, 308.146, 991.053, 300.731, 1002.46, 238.353, 998.539, 234.075, 975.656, 223.733 )
+
+[node name="Chair2" type="CollisionPolygon2D" parent="Node/Objects" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 757.39, 493.735, 749.957, 523.193, 742.524, 551, 733.163, 556.506, 670.117, 543.291, 663.785, 534.481, 667.364, 505.574, 670.392, 480.245 )
+
+[node name="Chair3" type="CollisionPolygon2D" parent="Node/Objects" index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( 442.05, 482.007, 448.107, 512.291, 450.584, 541.749, 443.977, 548.357, 381.757, 559.369, 371.57, 554.964, 363.036, 524.955, 356.979, 496.323, 367.165, 480.355 )
+
+[node name="Chair4" type="CollisionPolygon2D" parent="Node/Objects" index="3"]
+
+build_mode = 0
+polygon = PoolVector2Array( 135.054, 363.573, 120.302, 353.738, 91.2897, 342.428, 84.4055, 345.87, 52.4432, 397.502, 53.9184, 412.254, 77.0296, 427.989, 102.108, 444.708, 133.087, 438.807 )
+
+[node name="Chair5" type="CollisionPolygon2D" parent="Node/Objects" index="4"]
+
+build_mode = 0
+polygon = PoolVector2Array( 398.128, 110.333, 409.438, 79.3537, 407.471, 70.5026, 353.381, 37.5568, 339.121, 41.9824, 324.861, 64.6019, 309.617, 89.1883, 312.567, 110.824 )
 
 
