@@ -6,10 +6,13 @@ extends KinematicBody2D
 var is_alive = true
 
 var maxHealth = int(3)
-var currentHealth = int(maxhealth)
+var currentHealth = int(maxHealth)
 
 
-
+func GetLifeStatus():
+	return is_alive
+func SetLifeStatus(var lifestatus):
+	is_alive = lifestatus
 
 ''' Getters and Setters - for Health Manipulation'''
 func GetCurrentHealth():
