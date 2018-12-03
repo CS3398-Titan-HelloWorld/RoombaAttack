@@ -14,4 +14,6 @@ func InitializeFoodItem():
 func DecrementHealth():
 	SetCurrentHealth(GetCurrentHealth() - 1)
 	print(GetCurrentHealth())
-	
+
+func GetType():
+	return TYPE

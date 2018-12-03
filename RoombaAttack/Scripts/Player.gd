@@ -50,12 +50,12 @@ func _physics_process(delta):
 func OnPlayerCollision():
 	var collision = self.get_slide_collision(0).collider
 	#print("I entered a body!")
-	if collision.TYPE == "Roomba" && hitStun == 10:
+	if collision.GetType() == "Roomba" && hitStun == 10:
 		hide()
 		"""emit_signal("hit")"""
 		$CollisionShape.disabled = true
 		self.ReduceHealth()
-	elif collision.TYPE == "Food" && hitStun == 10:
+	elif collision.GetType() == "Food" && hitStun == 10:
 		print("Found the food!!!")
 		self.IncrementHealth()
 		collision.DecrementHealth()
