@@ -4,7 +4,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EndPosition.tscn" type="PackedScene" id=3]
 
-[node name="End of Game" type="Node"]
+[node name="End of Game" type="Node" index="0"]
 
 [node name="End of Game" type="TileMap" parent="." index="0"]
 
@@ -36,5 +36,20 @@ position = Vector2( 74.194, 462.096 )
 
 position = Vector2( 511.459, 477.871 )
 next_level = "res://Main.tscn"
+
+[node name="Boarders" type="StaticBody2D" parent="." index="3"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boarders" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 1019.11, 590.387, 1019.4, 11.6254, 9.32785, 10.2682, 9.71561, 589.805, 1011.84, 589.999, 1011.84, 610.357, 0.215027, 610.842, 0.602814, 0.185913, 1026.09, 0.476715, 1025.89, 611.908, 1018.14, 611.424 )
 
 
