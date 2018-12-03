@@ -54,7 +54,7 @@ extents = Vector2( 55.1646, 46.4796 )
 custom_solver_bias = 0.0
 extents = Vector2( 54.338, 47.1844 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 position = Vector2( 525, 300 )
 scale = Vector2( 1.5, 1.5 )
@@ -561,7 +561,8 @@ __meta__ = {
 [node name="Player" parent="Node" index="19" instance=ExtResource( 9 )]
 
 position = Vector2( 183.264, 255.284 )
-_sections_unfolded = [ "Collision", "Transform" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+speed = 250
 
 [node name="EndPosition2" parent="Node" index="20" instance=ExtResource( 10 )]
 

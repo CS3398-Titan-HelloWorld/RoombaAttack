@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://EndPosition.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/CookieSpritebig.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/crunch.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sprites/CookieSpritebig.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/audio.wav" type="AudioStream" id=4]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 266.656
@@ -16,26 +18,50 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
-audio_bus_name = "Master"
+audio_bus_name = "crunchBus"
 script = ExtResource( 1 )
-
+_sections_unfolded = [ "Audio Bus", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
+next_level = null
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="crunch" type="AudioStreamPlayer2D" parent="." index="0"]
+
+position = Vector2( 879, 449 )
+scale = Vector2( 0.65625, 0.65625 )
+stream = ExtResource( 2 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "crunchBus"
+area_mask = 1
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
 
 position = Vector2( 878.731, 452.331 )
 scale = Vector2( 0.079072, 0.083348 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( 879.766, 450.836 )
 scale = Vector2( 0.0882163, 0.0819034 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[connection signal="hit" from="." to="." method="_on_EndPosition2_hit"]
+[node name="AUDIO" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
 
