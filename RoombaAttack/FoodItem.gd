@@ -5,6 +5,8 @@ extends "res://Scripts/BasicFoodClass.gd"
 # var b = "textvar"
 var score;
 
+func _ready():
+	InitializeFoodItem()
 
 func _process(delta):
 	if(!is_alive):

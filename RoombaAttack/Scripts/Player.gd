@@ -7,6 +7,7 @@ export (int) var speed
 var screensize
 var velocity = Vector2()
 var body
+var hitStun = 10
 
 func _ready():
 	SetCurrentHealth(GetMaxHealth())
@@ -44,26 +45,36 @@ func _physics_process(delta):
 		$AnimatedSprite.animation = "Up"
 		$AnimatedSprite.flip_v = velocity.y > 0
 
+""" Use OnPlayerCollision() to add new collision events involving the player"""
+
 func OnPlayerCollision():
 	var collision = self.get_slide_collision(0).collider
 	#print("I entered a body!")
-	if collision.TYPE == "Roomba":
+	if collision.TYPE == "Roomba" && hitStun == 10:
 		hide()
 		"""emit_signal("hit")"""
 		$CollisionShape.disabled = true
 		self.ReduceHealth()
-		
-	elif collision.TYPE == "Food":
+	elif collision.TYPE == "Food" && hitStun == 10:
+		print("Found the food!!!")
 		self.IncrementHealth()
 		collision.DecrementHealth()
-		print("Found the food!!!")
+	CollisionCooldown()
 
 func ReduceHealth():
 	if GetCurrentHealth() < 0:
 		SetCurrentHealth(GetCurrentHealth() - 1)
 	if GetCurrentHealth() == 0:
 		is_alive = false
+
 func IncrementHealth():
 	if  GetCurrentHealth() < GetMaxHealth():
 		SetCurrentHealth(GetCurrenthealth() + 1)
+
+func CollisionCooldown():
+	while hitStun > 0:
+		hitStun -= 1
+
+func CollisionCooldownReset():
+	hitStun = 10
 

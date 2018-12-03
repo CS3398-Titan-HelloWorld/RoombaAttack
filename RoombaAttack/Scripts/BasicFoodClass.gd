@@ -7,10 +7,11 @@ extends "res://Scripts/EntityClass.gd"
 
 const TYPE = "Food"
 
-
 func InitializeFoodItem():
 	SetMaxHealth(1)
+	SetCurrentHealth(GetMaxHealth())
 	
 func DecrementHealth():
 	SetCurrentHealth(GetCurrentHealth() - 1)
 	print(GetCurrentHealth())
+	
