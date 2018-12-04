@@ -8,14 +8,21 @@ var screensize
 var velocity = Vector2()
 var body
 var hitStun = 10
+var health = 3
+var score = 1000
+onready var health_label = get_node("HUD/health_indicator")
+onready var score_label = get_node("HUD/score_label")
+
 
 func _ready():
+	health_label.set_text("Health:" + str(health))
 	SetCurrentHealth(GetMaxHealth())
 	SetLifeStatus(true)
 	screensize = get_viewport_rect().size
 	pass
-
 func _process(delta):
+	score -= 1
+	score_label.set_text("\nScore:" + str(score))
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
 		velocity.x +=1
@@ -30,10 +37,12 @@ func _process(delta):
 		$AnimatedSprite.play()
 	else:
 		$AnimatedSprite.stop()
+		
 	
 	if(self.get_slide_count() > 0 && self.get_slide_collision(0).collider.has_method("GetCurrentHealth") ):
 		OnPlayerCollision()
-
+func returnScore():
+	return score
 func _physics_process(delta):
 	move_and_slide(velocity)
 	
@@ -59,18 +68,25 @@ func OnPlayerCollision():
 	elif collision.GetType() == "Food" && hitStun == 10:
 		print("Found the food!!!")
 		self.IncrementHealth()
+		if (health < 3):
+			health +=1
+		health_label.set_text("Health:" + str(health))
 		collision.DecrementHealth()
 	CollisionCooldown()
 
 func ReduceHealth():
 	if GetCurrentHealth() < 0:
 		SetCurrentHealth(GetCurrentHealth() - 1)
+		health = GetCurrentHealth()
+		health_label.set_text("Health:" + str(health))
 	if GetCurrentHealth() == 0:
 		is_alive = false
 
 func IncrementHealth():
 	if  GetCurrentHealth() < GetMaxHealth():
 		SetCurrentHealth(GetCurrenthealth() + 1)
+		health = GetCurrentHealth()
+		health_label.set_text("Health:" + str(health))
 
 func CollisionCooldown():
 	while hitStun > 0:
