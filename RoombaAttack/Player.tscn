@@ -1,17 +1,17 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Player/BeetleR1.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Player/BeetleR2.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Player/BeetleL1.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Player/BeetleL2.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Player/BeetleL1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/BeetleL2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/BeetleR1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/BeetleR2.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Player/BeetleU1.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Player/Beetle_20.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Player/BeetleU0.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/BeetleR0.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Player/BeetleD1.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Player/BeetleD2.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Player/BeetleR0.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Player/BeetleL0.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Player/BeetleL0.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Player/BeetleU0.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Player/BeetleD0.png" type="Texture" id=13]
 [ext_resource path="res://CollisionShape.gd" type="Script" id=14]
 
@@ -20,12 +20,12 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "Right",
+"name": "Left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "Left",
+"name": "Right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
@@ -35,7 +35,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "Idel_Up",
+"name": "Idel_Right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
@@ -45,12 +45,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "Idel_Right",
+"name": "Idel_Left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "Idel_Left",
+"name": "Idel_Up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
@@ -86,15 +86,14 @@ radius = 14.6078
 
 position = Vector2( 29.9184, 31.5544 )
 input_pickable = false
-collision_layer = 3
+collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_group_": true
 }
-speed = 300
+speed = 500
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
