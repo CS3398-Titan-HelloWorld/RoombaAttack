@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 radius = 266.656
 
-[node name="EndPosition2" type="Area2D" index="0"]
+[node name="EndPosition2" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -20,6 +20,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "crunchBus"
 script = ExtResource( 1 )
+<<<<<<< HEAD
 _sections_unfolded = [ "Audio Bus", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -38,17 +39,18 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "crunchBus"
 area_mask = 1
+=======
+next_level = null
+>>>>>>> development
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( 878.731, 452.331 )
 scale = Vector2( 0.079072, 0.083348 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( 879.766, 450.836 )
 scale = Vector2( 0.0882163, 0.0819034 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -63,5 +65,6 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
 
 
