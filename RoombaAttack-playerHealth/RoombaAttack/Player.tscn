@@ -1,50 +1,46 @@
-
 [gd_scene load_steps=18 format=2]
 
-
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Player/BeetleL1.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Player/BeetleL2.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Player/BeetleR1.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Player/BeetleR2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/BeetleR1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/BeetleR2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/BeetleL1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/BeetleL2.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Player/BeetleU1.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Player/Beetle_20.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Player/BeetleR0.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Player/BeetleD1.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Player/BeetleD2.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Player/BeetleL0.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Player/BeetleU0.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Player/BeetleD0.png" type="Texture" id=13]
-
+[ext_resource path="res://Sprites/Player/BeetleD0.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/BeetleU0.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Player/BeetleL0.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Player/BeetleD1.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Player/BeetleD2.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Player/BeetleR0.png" type="Texture" id=13]
 [ext_resource path="res://CollisionShape.gd" type="Script" id=14]
-[ext_resource path="res://Sprites/squish.wav" type="AudioStream" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "Left",
+"name": "Right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "Right",
+"name": "Left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "Idel_Right",
+"name": "Up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "Idel_Right",
+"name": "Idel_Down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "Idel_Left",
+"name": "Idel_Up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -52,14 +48,14 @@ animations = [ {
 "name": "Idel_Left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "Idel_Up",
+"name": "Down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": true,
-"name": "Up",
+"name": "Idel_Right",
 "speed": 5.0
 } ]
 
@@ -88,7 +84,7 @@ radius = 14.6078
 
 [node name="Player" type="KinematicBody2D" index="0"]
 
-position = Vector2( 29.9184, 31.5544 )
+position = Vector2( 41.8932, 30.9557 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -125,15 +121,38 @@ shape = SubResource( 3 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="squish" type="AudioStreamPlayer2D" parent="." index="2"]
+[node name="HUD" type="Control" parent="." index="2"]
 
-stream = ExtResource( 15 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="score_label" type="Label" parent="HUD" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 43.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Theme", "custom_styles" ]
 
 
