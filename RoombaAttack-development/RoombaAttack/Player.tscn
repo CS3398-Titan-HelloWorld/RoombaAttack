@@ -5,14 +5,14 @@
 [ext_resource path="res://Sprites/Player/BeetleL2.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Player/BeetleR1.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Player/BeetleR2.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Player/BeetleR0.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Player/BeetleD1.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Player/BeetleD2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/BeetleD1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/BeetleD2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/BeetleR0.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Player/BeetleL0.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Player/BeetleU0.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Player/BeetleD0.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Player/BeetleU1.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Player/Beetle_20.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Player/BeetleU1.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Player/Beetle_20.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Player/BeetleD0.png" type="Texture" id=13]
 [ext_resource path="res://CollisionShape.gd" type="Script" id=14]
 [ext_resource path="res://Sprites/squish.wav" type="AudioStream" id=15]
 
@@ -29,14 +29,14 @@ animations = [ {
 "name": "Right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "Idel_Right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Idel_Right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -49,14 +49,14 @@ animations = [ {
 "name": "Idel_Up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "Idel_Down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Idel_Down",
 "speed": 5.0
 } ]
 
@@ -100,6 +100,7 @@ speed = 300
 
 frames = SubResource( 1 )
 animation = "Right"
+frame = 1
 playing = true
 _sections_unfolded = [ "Animation" ]
 
@@ -132,5 +133,38 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="HUD" type="Control" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="health_label" type="Label" parent="HUD" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
