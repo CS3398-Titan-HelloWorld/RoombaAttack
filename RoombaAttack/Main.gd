@@ -13,6 +13,7 @@ func new_game():
 	score = 0
 	$GUI.update_score(score)
 	$Player.start($StartPosition.position)
+	$AUDIO.play()
 	$StartTimer.start()
 	
 	
