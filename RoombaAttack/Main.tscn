@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://RoombaMob.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://food.png" type="Texture" id=6]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://PausePanel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/squish.wav" type="AudioStream" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -19,7 +20,7 @@ radius = 17.5071
 custom_solver_bias = 0.0
 radius = 18.1246
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 RoombaMob = ExtResource( 2 )
@@ -101,5 +102,16 @@ shadow_atlas_quad_0 = 2
 shadow_atlas_quad_1 = 2
 shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
+
+[node name="squish" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 1500.0
+attenuation = 1.0
+bus = "squishBus"
+area_mask = 1
 
 
