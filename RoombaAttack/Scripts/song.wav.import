@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/song.wav-60525e8dd0149bb857d3c95e33a8dd09.sample"
+
+[deps]
+
+source_file="res://Scripts/song.wav"
+dest_files=[ "res://.import/song.wav-60525e8dd0149bb857d3c95e33a8dd09.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

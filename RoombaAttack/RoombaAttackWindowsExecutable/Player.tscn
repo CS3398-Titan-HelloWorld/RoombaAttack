@@ -1,16 +1,16 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Player/BeetleR1.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Player/BeetleR2.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Player/BeetleL1.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Player/BeetleL2.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Player/BeetleU1.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Player/Beetle_20.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Player/BeetleU0.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Player/BeetleD1.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Player/BeetleD2.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Player/BeetleR0.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Player/BeetleL1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/BeetleL2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/BeetleR1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/BeetleR2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/BeetleD1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/BeetleD2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/BeetleR0.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/BeetleU0.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Player/BeetleU1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Player/Beetle_20.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Player/BeetleL0.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Player/BeetleD0.png" type="Texture" id=13]
 [ext_resource path="res://CollisionShape.gd" type="Script" id=14]
@@ -20,32 +20,32 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "Right",
+"name": "Left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "Left",
+"name": "Right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "Up",
+"name": "Down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
+"name": "Idel_Right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
 "name": "Idel_Up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
-"name": "Down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "Idel_Right",
+"name": "Up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ) ],
@@ -80,7 +80,7 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 14.6078
+radius = 10.9441
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -94,7 +94,7 @@ _sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_group_": true
 }
-speed = 300
+speed = 250
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -115,9 +115,9 @@ blend_times = [  ]
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.518285, -1.01742 )
+position = Vector2( -0.836766, 0.912501 )
 rotation = 0.431096
-scale = Vector2( 1.16196, 0.827516 )
+scale = Vector2( 1.00059, 1.08252 )
 shape = SubResource( 3 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
