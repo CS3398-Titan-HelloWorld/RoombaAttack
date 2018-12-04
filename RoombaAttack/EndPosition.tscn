@@ -2,13 +2,8 @@
 
 [ext_resource path="res://EndPosition.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/CookieSpritebig.png" type="Texture" id=2]
-<<<<<<< HEAD
-[ext_resource path="res://crunch.wav" type="AudioStream" id=3]
-[ext_resource path="res://song.wav" type="AudioStream" id=4]
-=======
 [ext_resource path="res://Scripts/crunch.wav" type="AudioStream" id=3]
 [ext_resource path="res://Scripts/song.wav" type="AudioStream" id=4]
->>>>>>> 6c3e6003505bb1cb33a990c9b095cb79294c843c
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -44,13 +39,8 @@ _sections_unfolded = [ "Transform" ]
 stream = ExtResource( 3 )
 volume_db = 0.0
 pitch_scale = 1.0
-<<<<<<< HEAD
-autoplay = false
-max_distance = 700.0
-=======
 autoplay = true
 max_distance = 1500.0
->>>>>>> 6c3e6003505bb1cb33a990c9b095cb79294c843c
 attenuation = 1.0
 bus = "crunchBus"
 area_mask = 1
