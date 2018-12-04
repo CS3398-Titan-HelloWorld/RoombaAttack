@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://OutsideLevel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Runtime.tscn" type="PackedScene" id=3]
-[ext_resource path="res://FoodItem.gd" type="Script" id=4]
-[ext_resource path="res://food.png" type="Texture" id=5]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://PausePanel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://RoombaMob.tscn" type="PackedScene" id=2]
+[ext_resource path="res://OutsideLevel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Runtime.tscn" type="PackedScene" id=4]
+[ext_resource path="res://FoodItem.gd" type="Script" id=5]
+[ext_resource path="res://food.png" type="Texture" id=6]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PausePanel.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -21,39 +22,26 @@ radius = 18.1246
 [node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
-Mob = null
+RoombaMob = ExtResource( 2 )
 
-[node name="First Level" parent="." index="0" instance=ExtResource( 2 )]
+[node name="First Level" parent="." index="0" instance=ExtResource( 3 )]
 
-[node name="Runtime" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Runtime" parent="." index="1" instance=ExtResource( 4 )]
 
-[node name="FoodItem" type="RigidBody2D" parent="." index="2"]
+[node name="FoodItem" type="KinematicBody2D" parent="." index="2"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-script = ExtResource( 4 )
+collision/safe_margin = 0.08
+script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="FoodItem" index="0"]
 
 position = Vector2( 556.25, 193.219 )
 scale = Vector2( 0.0641667, 0.062387 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FoodItem" index="1"]
 
@@ -84,9 +72,9 @@ __meta__ = {
 
 [node name="Interrupt" type="Node" parent="." index="3"]
 
-[node name="GUI" parent="Interrupt" index="0" instance=ExtResource( 6 )]
+[node name="GUI" parent="Interrupt" index="0" instance=ExtResource( 7 )]
 
-[node name="PausePanel" parent="Interrupt" index="1" instance=ExtResource( 7 )]
+[node name="PausePanel" parent="Interrupt" index="1" instance=ExtResource( 8 )]
 
 [node name="Viewport" type="Viewport" parent="." index="4"]
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://LevelMap Resources/RoombaOutsideLevelTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EndPosition.tscn" type="PackedScene" id=3]
+[ext_resource path="res://RoombaMob.tscn" type="PackedScene" id=4]
 
 [node name="Node" type="Node"]
 
@@ -64,5 +65,14 @@ __meta__ = {
 
 build_mode = 0
 polygon = PoolVector2Array( 640, 0, 0, 0, 0, 670, 640, 670, 640, 590, 10, 590, 10, 10, 640, 10 )
+
+[node name="RoombaSpawn" type="Position2D" parent="." index="4"]
+
+position = Vector2( 539.106, 141.479 )
+scale = Vector2( 0.960223, 1 )
+
+[node name="KinematicBody2D" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 172.767, 555.033 )
 
 
