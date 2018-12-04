@@ -14,6 +14,8 @@ export (float) var spawn_direction # the number multiplied by PI to get the radi
 var damageDealt = 1
 var moveSpeed = 60
 var spritedir = "Down"
+var movedir
+
 
 export (int) var damage
 export (int) var health
@@ -27,6 +29,7 @@ func CollisionDetection(body):
 		emit("roomba_hit_obstacle")
   else:
     emit("roomba_hit_player")
+
 
 func RandoMovement():
 	var motion = movedir.normalized() * moveSpeed

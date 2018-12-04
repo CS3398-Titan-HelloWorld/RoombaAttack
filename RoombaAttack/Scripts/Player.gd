@@ -53,6 +53,7 @@ func OnPlayerCollision():
 	if collision.GetType() == "Roomba" && hitStun == 10:
 		hide()
 		"""emit_signal("hit")"""
+		$squish.play()
 		$CollisionShape.disabled = true
 		self.ReduceHealth()
 	elif collision.GetType() == "Food" && hitStun == 10:

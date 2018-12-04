@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://RoombaMob.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://food.png" type="Texture" id=6]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://PausePanel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/squish.wav" type="AudioStream" id=9]
+[ext_resource path="res://Scripts/song.wav" type="AudioStream" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -50,6 +52,7 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
+collision/safe_margin = 0.08
 script = ExtResource( 5 )
 
 
@@ -118,5 +121,25 @@ shadow_atlas_quad_0 = 2
 shadow_atlas_quad_1 = 2
 shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
+
+[node name="squish" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 1500.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="AUDIO" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 

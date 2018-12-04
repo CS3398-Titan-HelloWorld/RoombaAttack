@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://EndPosition.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/CookieSpritebig.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/crunch.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/song.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 266.656
 
-[node name="EndPosition2" type="Area2D"]
+[node name="EndPosition2" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -31,6 +33,28 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 scale = Vector2( 0.0882163, 0.0819034 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="crunch" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 1500.0
+attenuation = 1.0
+bus = "crunchBus"
+area_mask = 1
+
+[node name="AUDIO" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="hit" from="." to="." method="_on_EndPosition2_hit"]
 
