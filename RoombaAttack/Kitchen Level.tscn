@@ -103,6 +103,7 @@ polygon = PoolVector2Array( 600, 330, 330, 330, 330, 520, 600, 520 )
 build_mode = 0
 polygon = PoolVector2Array( 780, 300, 780, 620, 930, 620, 930, 90, 330, 90, 330, 60, 180, 60, 180, 300 )
 
+<<<<<<< HEAD
 [node name="Roomba1" parent="." index="8" instance=ExtResource( 7 )]
 
 position = Vector2( 130.07, 312.587 )
@@ -110,5 +111,14 @@ position = Vector2( 130.07, 312.587 )
 [node name="Roomba2" parent="." index="9" instance=ExtResource( 7 )]
 
 position = Vector2( 866.108, 49.7138 )
+=======
+[node name="KinematicBody2D" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 50, 560 )
+
+[node name="KinematicBody2D2" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 730, 350 )
+>>>>>>> 12674893990f698816503e54f6f1900f9059203d
 
 
