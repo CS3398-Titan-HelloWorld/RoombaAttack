@@ -23,6 +23,7 @@ radius = 18.1246
 
 [node name="Main" type="Node"]
 
+editor/display_folded = true
 script = ExtResource( 1 )
 RoombaMob = ExtResource( 2 )
 
@@ -73,6 +74,8 @@ __meta__ = {
 }
 
 [node name="Interrupt" type="Node" parent="." index="3"]
+
+editor/display_folded = true
 
 [node name="GUI" parent="Interrupt" index="0" instance=ExtResource( 7 )]
 

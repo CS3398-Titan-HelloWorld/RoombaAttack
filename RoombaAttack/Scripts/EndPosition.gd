@@ -17,3 +17,4 @@ func _physics_process(delta):
 			$crunch.play()
 			get_tree().change_scene(next_level)
 			score = body.returnScore()
+			
