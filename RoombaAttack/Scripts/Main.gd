@@ -1,6 +1,9 @@
 extends Node
 export (PackedScene) var Mob
 var score
+var finalScore
+onready var final_score= get_node("HUD/final_score")
+onready var score_label = get_node("HUD/score_label")
 func _ready():
 	randomize()
 
@@ -8,8 +11,11 @@ func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$GUI.show_game_over()
+	finalScore = $EndPosisition.returnFinal()
+	final_score.set_text("Final Score:" + str(finalScore))
+	
+	
 func new_game():
-	score = 0
 	$GUI.update_score(score)
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
@@ -19,6 +25,7 @@ func _on_StartTimer_timeout():
 func _on_ScoreTimer_timeout():
 	score += 1
 	$GUI.update_score(score)
+	score_label.set_text("Score:" + str(score))
 func _on_MobTimer_timeout():
     # Choose a random location on Path2D.
     $MobPath/MobSpawnLocation.set_offset(randi())
