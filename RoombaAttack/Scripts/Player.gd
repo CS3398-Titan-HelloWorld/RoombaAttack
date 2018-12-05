@@ -39,14 +39,12 @@ func _process(delta):
 		$AnimatedSprite.stop()
 		
 	
-<<<<<<< HEAD
 
-=======
 	if(self.get_slide_count() > 0 && self.get_slide_collision(0).collider.has_method("GetCurrentHealth") ):
 		OnPlayerCollision()
 func returnScore():
 	return score
->>>>>>> 24f3cb8c335ac144bbf73196815ecb7612f2b836
+
 func _physics_process(delta):
 	move_and_slide(velocity)
 	
@@ -77,21 +75,17 @@ func OnPlayerCollision():
 		#$CollisionShape.disabled = true
 		self.ReduceHealth()
 	elif collision.GetType() == "Food" && hitStun == 10:
-<<<<<<< HEAD
-=======
+
 		print("Found the food!!!")
 		self.IncrementHealth()
 		if (health < 4):
 			health +=1
 		health_label.set_text("Health:" + str(health))
->>>>>>> 24f3cb8c335ac144bbf73196815ecb7612f2b836
 		collision.DecrementHealth()
-<<<<<<< Updated upstream
 		self.IncrementHealth()
-=======
 		print("Found the food!!!")
 		print(GetCurrentHealth())
->>>>>>> Stashed changes
+
 
 func ReduceHealth():
 	if GetCurrentHealth() < 0:
@@ -104,9 +98,12 @@ func ReduceHealth():
 func IncrementHealth():
 	if  GetCurrentHealth() < GetMaxHealth():
 		SetCurrentHealth(GetCurrenthealth() + 1)
-<<<<<<< Updated upstream
+
 		health = GetCurrentHealth()
 		health_label.set_text("Health:" + str(health))
+	else:
+		print("Your health is maxed out at:")
+		print (GetCurrentHealth())
 
 func CollisionCooldown():
 	while hitStun > 0:
@@ -114,9 +111,4 @@ func CollisionCooldown():
 
 func CollisionCooldownReset():
 	hitStun = 10
-=======
-	else:
-		print("Your health is maxed out at:")
-		print (GetCurrentHealth())
->>>>>>> Stashed changes
 
