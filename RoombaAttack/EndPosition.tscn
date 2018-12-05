@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 radius = 266.656
 
-[node name="EndPosition2" type="Area2D" index="0"]
+[node name="EndPosition2" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

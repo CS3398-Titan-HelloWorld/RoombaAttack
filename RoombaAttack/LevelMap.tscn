@@ -31,32 +31,32 @@ custom_solver_bias = 0.0
 a = Vector2( 0.31719, 0.561565 )
 b = Vector2( 0.363632, 31.0176 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8.19935, 1.40215 )
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=5]
 
 custom_solver_bias = 0.0
 radius = 11.5036
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=6]
 
 custom_solver_bias = 0.0
 radius = 65.5918
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=7]
 
 custom_solver_bias = 0.0
 radius = 66.8542
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 55.1646, 46.4796 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
 extents = Vector2( 54.338, 47.1844 )
@@ -225,7 +225,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Node/Table/StaticBody2D" index="4"]
 
 position = Vector2( 24.5078, -33.4969 )
-shape = SubResource( 9 )
+shape = SubResource( 4 )
 
 [node name="Laptop1" type="Sprite" parent="Node" index="8"]
 
@@ -338,7 +338,7 @@ bounce = 0.0
 
 position = Vector2( -1.0686, 1.3183 )
 scale = Vector2( 5.46547, 5.84625 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -366,7 +366,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Plant2/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -394,7 +394,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Plant3/StaticBody2D" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -425,7 +425,7 @@ bounce = 0.0
 
 position = Vector2( -0.610443, 7.528 )
 rotation = 0.366254
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -457,7 +457,7 @@ bounce = 0.0
 position = Vector2( -0.290039, 9.25104 )
 rotation = 0.404229
 scale = Vector2( 0.975559, 1.03101 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -488,7 +488,7 @@ bounce = 0.0
 
 position = Vector2( -0.332642, 8.60954 )
 rotation = 0.368375
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -594,14 +594,9 @@ __meta__ = {
 
 [node name="Player" parent="Node" index="20" instance=ExtResource( 10 )]
 
-<<<<<<< HEAD
-position = Vector2( 183.264, 255.284 )
+position = Vector2( 904.836, 24.6856 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 speed = 250
-=======
-position = Vector2( 904.836, 24.6856 )
-_sections_unfolded = [ "Collision", "Transform" ]
->>>>>>> development
 
 [node name="EndPosition2" parent="Node" index="21" instance=ExtResource( 11 )]
 

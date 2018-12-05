@@ -31,8 +31,6 @@ func _process(delta):
 	else:
 		$AnimatedSprite.stop()
 	
-	if(self.get_slide_count() > 0 && self.get_slide_collision(0).collider.has_method("GetCurrentHealth") ):
-		OnPlayerCollision()
 
 func _physics_process(delta):
 	move_and_slide(velocity)
@@ -44,23 +42,28 @@ func _physics_process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite.animation = "Up"
 		$AnimatedSprite.flip_v = velocity.y > 0
+		
+	if(self.get_slide_count() > 0 && self.get_slide_collision(0).collider.has_method("GetCurrentHealth") ):
+		OnPlayerCollision()
 
 """ Use OnPlayerCollision() to add new collision events involving the player"""
 
 func OnPlayerCollision():
 	var collision = self.get_slide_collision(0).collider
 	#print("I entered a body!")
+	CollisionCooldown()
+	CollisionCooldownReset()
+	
 	if collision.GetType() == "Roomba" && hitStun == 10:
+		hitStun -= 1
 		hide()
-		"""emit_signal("hit")"""
+		print("Losing Health")
 		$squish.play()
-		$CollisionShape.disabled = true
+		#$CollisionShape.disabled = true
 		self.ReduceHealth()
 	elif collision.GetType() == "Food" && hitStun == 10:
-		print("Found the food!!!")
-		self.IncrementHealth()
 		collision.DecrementHealth()
-	CollisionCooldown()
+		self.IncrementHealth()
 
 func ReduceHealth():
 	if GetCurrentHealth() < 0:

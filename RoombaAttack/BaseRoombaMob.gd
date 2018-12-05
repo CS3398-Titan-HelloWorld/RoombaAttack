@@ -6,13 +6,13 @@ extends KinematicBody2D
 
 const TYPE = "Roomba"
 signal roomba_hit_player
-export (int) var min_speed
+export (int) var min_speed 
 export (int) var max_speed
 export (float) var spawn_direction # the number multiplied by PI to get the radian
 
 
 var damageDealt = 1
-var moveSpeed = 60
+var moveSpeed = 300
 var spritedir = "Down"
 var movedir
 
@@ -31,7 +31,7 @@ func CollisionDetection(body):
 
 func RandoMovement():
 	var motion = movedir.normalized() * moveSpeed
-	move_and_slied(motion, Vector2(0,0))
+	move_and_slide(motion, Vector2(0,0))
 
 func spriteDirLoop():
 	match movedir:
