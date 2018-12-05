@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://LevelMap Resources/RoombaOutsideLevelTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://LevelMap Resources/KitchenTileSet.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://EndPosition.tscn" type="PackedScene" id=4]
 [ext_resource path="res://FoodItem.tscn" type="PackedScene" id=5]
 [ext_resource path="res://PausePanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://RoombaMob.tscn" type="PackedScene" id=7]
 
 [node name="Kitchen Level" type="Node" index="0"]
 
@@ -101,5 +102,13 @@ polygon = PoolVector2Array( 600, 330, 330, 330, 330, 520, 600, 520 )
 
 build_mode = 0
 polygon = PoolVector2Array( 780, 300, 780, 620, 930, 620, 930, 90, 330, 90, 330, 60, 180, 60, 180, 300 )
+
+[node name="KinematicBody2D" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 50, 560 )
+
+[node name="KinematicBody2D2" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 730, 350 )
 
 

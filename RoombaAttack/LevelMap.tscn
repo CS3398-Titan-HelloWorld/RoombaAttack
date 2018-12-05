@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://LevelMap Resources/RoombaOutsideLevelTileSet.tres" type="TileSet" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://EndPosition.tscn" type="PackedScene" id=11]
 [ext_resource path="res://PausePanel.tscn" type="PackedScene" id=12]
+[ext_resource path="res://RoombaMob.tscn" type="PackedScene" id=13]
 
 [sub_resource type="SegmentShape2D" id=1]
 
@@ -61,7 +62,7 @@ extents = Vector2( 55.1646, 46.4796 )
 custom_solver_bias = 0.0
 extents = Vector2( 54.338, 47.1844 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
 position = Vector2( 525, 300 )
 scale = Vector2( 1.5, 1.5 )
@@ -658,5 +659,21 @@ polygon = PoolVector2Array( 135.054, 363.573, 120.302, 353.738, 91.2897, 342.428
 
 build_mode = 0
 polygon = PoolVector2Array( 398.128, 110.333, 409.438, 79.3537, 407.471, 70.5026, 353.381, 37.5568, 339.121, 41.9824, 324.861, 64.6019, 309.617, 89.1883, 312.567, 110.824 )
+
+[node name="KinematicBody2D" parent="Node" index="25" instance=ExtResource( 13 )]
+
+position = Vector2( 105.367, 544.795 )
+
+[node name="KinematicBody2D2" parent="Node" index="26" instance=ExtResource( 13 )]
+
+position = Vector2( 64.657, 164.037 )
+
+[node name="KinematicBody2D3" parent="Node" index="27" instance=ExtResource( 13 )]
+
+position = Vector2( 939.921, 541.203 )
+
+[node name="KinematicBody2D4" parent="Node" index="28" instance=ExtResource( 13 )]
+
+position = Vector2( 718.411, 355.614 )
 
 
