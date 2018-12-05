@@ -86,7 +86,12 @@ func OnPlayerCollision():
 		health_label.set_text("Health:" + str(health))
 >>>>>>> 24f3cb8c335ac144bbf73196815ecb7612f2b836
 		collision.DecrementHealth()
+<<<<<<< Updated upstream
 		self.IncrementHealth()
+=======
+		print("Found the food!!!")
+		print(GetCurrentHealth())
+>>>>>>> Stashed changes
 
 func ReduceHealth():
 	if GetCurrentHealth() < 0:
@@ -99,6 +104,7 @@ func ReduceHealth():
 func IncrementHealth():
 	if  GetCurrentHealth() < GetMaxHealth():
 		SetCurrentHealth(GetCurrenthealth() + 1)
+<<<<<<< Updated upstream
 		health = GetCurrentHealth()
 		health_label.set_text("Health:" + str(health))
 
@@ -108,4 +114,9 @@ func CollisionCooldown():
 
 func CollisionCooldownReset():
 	hitStun = 10
+=======
+	else:
+		print("Your health is maxed out at:")
+		print (GetCurrentHealth())
+>>>>>>> Stashed changes
 
