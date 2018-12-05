@@ -68,7 +68,7 @@ func OnPlayerCollision():
 	elif collision.GetType() == "Food" && hitStun == 10:
 		print("Found the food!!!")
 		self.IncrementHealth()
-		if (health < 3):
+		if (health < 4):
 			health +=1
 		health_label.set_text("Health:" + str(health))
 		collision.DecrementHealth()
