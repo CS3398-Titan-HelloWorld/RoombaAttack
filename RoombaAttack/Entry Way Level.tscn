@@ -7,7 +7,7 @@
 [ext_resource path="res://PausePanel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://RoombaMob.tscn" type="PackedScene" id=6]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="Outside TileMap" type="TileMap" parent="." index="0"]
 
@@ -184,7 +184,6 @@ polygon = PoolVector2Array( 31.7173, 593.942, 32.1427, 447.196, 0.241531, 448.04
 build_mode = 0
 polygon = PoolVector2Array( 32.1827, 7.07045, 32.1827, 193.715, 7.77571, 194.465, 8.02646, 448.071, 1.00507, 447.988, 0.892242, 192.617, 0.343292, -1.16388, 1024.58, -2.152, 1025.13, 36.8238, 1010.86, 35.177, 1011.41, 3.88651 )
 
-<<<<<<< HEAD
 [node name="Roomba1" parent="." index="12" instance=ExtResource( 6 )]
 
 position = Vector2( 528, 156 )
@@ -192,10 +191,5 @@ position = Vector2( 528, 156 )
 [node name="Roomba2" parent="." index="13" instance=ExtResource( 6 )]
 
 position = Vector2( 878, 369 )
-=======
-[node name="KinematicBody2D" parent="." index="12" instance=ExtResource( 6 )]
-
-position = Vector2( 881.492, 547.51 )
->>>>>>> 12674893990f698816503e54f6f1900f9059203d
 
 
