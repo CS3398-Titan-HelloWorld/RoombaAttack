@@ -46,6 +46,5 @@ Sprint 1: ----------------------------------------------------------------------
                   
 Sprint 3(for last assignment : --------------------------------------------------------------------------------------------------------------------------------
                   Completed Tasks:
-                  1.) Added sound effect for when the player eats the cookie. Also added background soundtrack and sound for collision with
-                      roomba(however the collision detection did not work so this sound did not play). --Ramsey 
+                  1.) I added a sound effect for when the player eats/gets to the cookie. I also added the background soundtrack and sound                       for collision with the roomba(however the collision detection did not work so this sound did not play). The work I                         did is included in the EndPosition.tscn and EndPosition.gd. Some of these aditions also went into the main.gd and                           main.tscn. Lastly, I added code to the Player.tscn and Player.gd. All of these edits and changes were pushed to the                         Audio branch. --Ramsey 
                   
