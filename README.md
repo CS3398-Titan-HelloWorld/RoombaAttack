@@ -41,3 +41,11 @@ Sprint 1: ----------------------------------------------------------------------
                   3.) Create Additional Levels -- Brianna
                   4.) Add additional assets (SFX/BGM/Consumables) -- Nash
                   5.) Create Game Manager(Lose Condition/Level Transitioning) -- Ian
+                  
+                  
+                  
+Sprint 3(for last assignment : --------------------------------------------------------------------------------------------------------------------------------
+                  Completed Tasks:
+                  1.) Added sound effect for when the player eats the cookie. Also added background soundtrack and sound for collision with
+                      roomba(however the collision detection did not work so this sound did not play). --Ramsey 
+                  
