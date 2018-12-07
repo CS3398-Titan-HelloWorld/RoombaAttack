@@ -51,9 +51,10 @@ Sprint 3(for last assignment : -------------------------------------------------
 Completed Tasks: - Nash
 2.) For sprint three I helped implement the food item into the game and added two separate labels to the player scene, one that indicated the players health and one that indicated the players score. The players score decreases the longer that it takes the player to complete each level, thus creating an incentive to complete every level as fast as possible. The food item, when picked up by the player, increases the players health by one, giving the player an extra life against the Roomba. This all included additions to the main.tscn and main.gd, as well as additions to the Player.tscn and Player.gd. Additions were also made to the finalPosition.gd and .tscn to attempt to accumulate the final score however this functionality has been unsuccessful thus far.
 
-Cmpleted Tasks- Ian: For sprint three, I built the Roomba Mob in RoombaMob.tcsn, I then fleshed out the scripts in both RoombaMob and Base Roomba mob, to add flexibility and features as movement and pathing. I then added the script of roomba operation into main, and placed roombas in the varios levels
+Completed Tasks- Ian: For sprint three, I built the Roomba Mob in RoombaMob.tcsn, I then fleshed out the scripts in both RoombaMob and Base Roomba mob, to add flexibility and features as movement and pathing. I then added the script of roomba operation into main, and placed roombas in the varios levels
 
-
+Completed Tasks: Brianna
+For sprint three I created the design of the 5 different levels and implemented the changing between each level when the player gets to the cookie. I created collision boxes for items in each room so that the player and roombas had increasingly more difficult areas to move around. I also made sure the pause button feature was working on every level of the game. The majority of my additions are in the PausePanel.gd, LevelMap.tscn, EntryWayLevel.tscn, Kitchen Level.tscn, and Living Room Level.tscn. Sprint three was much smoother than sprint two because most of the research had been done and the majority of my hours were implementing code instead of reasearching.
 
 Porter(Dec. 6, 2018): Implemented PlayerHealth, Foodhealth, and Collision detection for the player.
 	Branch: PlayerHealth (this ended several different features to do patches that needed to be
