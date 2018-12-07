@@ -52,3 +52,17 @@ Completed Tasks: - Nash
 2.) For sprint three I helped implement the food item into the game and added two separate labels to the player scene, one that indicated the players health and one that indicated the players score. The players score decreases the longer that it takes the player to complete each level, thus creating an incentive to complete every level as fast as possible. The food item, when picked up by the player, increases the players health by one, giving the player an extra life against the Roomba. This all included additions to the main.tscn and main.gd, as well as additions to the Player.tscn and Player.gd. Additions were also made to the finalPosition.gd and .tscn to attempt to accumulate the final score however this functionality has been unsuccessful thus far.
 
 Cmpleted Tasks- Ian: For sprint three, I built the Roomba Mob in RoombaMob.tcsn, I then fleshed out the scripts in both RoombaMob and Base Roomba mob, to add flexibility and features as movement and pathing. I then added the script of roomba operation into main, and placed roombas in the varios levels
+
+
+
+Porter(Dec. 6, 2018): Implemented PlayerHealth, Foodhealth, and Collision detection for the player.
+	Branch: PlayerHealth (this ended several different features to do patches that needed to be
+		done for continuous development)
+		***All of these changes are also in the development branch and master branch***
+	SourceCode: res/Scripts/EntityClass.gd
+-	This is the base class that other entities, like the player and the FoodItem, inherit from. Contains health variables and getter/setter functionality
+res/Scripts/Player.gd 
+-	This is the script attached to the player gameObject (aka the player the user plays as). This script contains functionality for detecting other tagged gameobjects (food/Roomba), functionality for incrementing and decrementing their health, and the necessary functions that GoDot requires (_ready()/_process()/etc).
+         Rest/Scripts/BasicFoodClass.gd
+-	This class is the BaseFood class. It inherits from the BasicEntity class and specializes it for Food Items by adding a food “TYPE” and Intialization methods for the food item(s).
+
