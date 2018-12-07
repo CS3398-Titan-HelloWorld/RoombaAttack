@@ -84,7 +84,7 @@ What went well?
 — There is a health bar and score counter included after this sprint. 
 
 What is impeding us from doing better?
-— Godot does not have much documentation available. This made much of the tasks we hoped to complete harder to fo because we did not have an easy access to information. 
+— Godot does not have much documentation available. This made much of the tasks we hoped to complete harder to do because we did not have easy access to information. 
 
 What can we do to mprove?
 — We could improve on the roomba’s movement seeing as it is sporadic. 
