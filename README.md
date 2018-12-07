@@ -66,3 +66,25 @@ res/Scripts/Player.gd
          Rest/Scripts/BasicFoodClass.gd
 -	This class is the BaseFood class. It inherits from the BasicEntity class and specializes it for Food Items by adding a food “TYPE” and Intialization methods for the food item(s).
 
+
+
+
+
+
+
+
+TEAM QUESTIONS/ANSWERS:
+What went well?
+— We got several new level maps up and a full story line 
+— We have game audio.
+— We have a end game scene added to the end of the game. 
+— Pause functionality is fully working
+— There is a “working” moving roomba enemy.
+— There is a health bar and score counter included after this sprint. 
+
+What is impeding us from doing better?
+— Godot does not have much documentation available. This made much of the tasks we hoped to complete harder to fo because we did not have an easy access to information. 
+
+What can we do to mprove?
+— We could improve on the roomba’s movement seeing as it is sporadic. 
+— Fixing the hitbox on the roomba so that the collisions would be registered and the health would be lowered and the collision sound would play. 
